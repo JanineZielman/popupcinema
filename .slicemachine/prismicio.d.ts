@@ -6,6 +6,52 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Event documents */
+interface EventDocumentData {
+    /**
+     * Title field in *Event*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: event.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Date field in *Event*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: *None*
+     * - **API ID Path**: event.date
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    date: prismicT.DateField;
+    /**
+     * Time field in *Event*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: 20:00
+     * - **API ID Path**: event.time
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    time: prismicT.KeyTextField;
+}
+/**
+ * Event document from Prismic
+ *
+ * - **API ID**: `event`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type EventDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<EventDocumentData>, "event", Lang>;
 /** Content for Navigation documents */
 interface NavigationDocumentData {
     /**
@@ -131,12 +177,12 @@ interface SettingsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
-export type AllDocumentTypes = NavigationDocument | PageDocument | SettingsDocument;
+export type AllDocumentTypes = EventDocument | NavigationDocument | PageDocument | SettingsDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes };
+        export type { EventDocumentData, EventDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes };
     }
 }

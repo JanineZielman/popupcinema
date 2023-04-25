@@ -1,0 +1,27 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "sudden"
+  },
+  "title": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "heading1",
+        "content": {
+          "text": "Silver"
+        }
+      }
+    ]
+  },
+  "date": {
+    "__TYPE__": "FieldContent",
+    "type": "Date",
+    "value": "2013-04-06"
+  },
+  "time": {
+    "__TYPE__": "FieldContent",
+    "value": "either",
+    "type": "Text"
+  }
+}

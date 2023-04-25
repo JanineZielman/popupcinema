@@ -33,7 +33,8 @@
           "blocks": 1
         }
       }
-    }
+    },
+    "event": {}
   },
   "slices": {
     "Text": {

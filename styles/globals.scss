@@ -1,3 +1,95 @@
 body{
   font-family: "new-hero", sans-serif;
 }
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+p a{
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4{
+  font-weight: 400;
+}
+
+.logo{
+  height: 75px;
+  width: auto;
+  background-color: white;
+  padding-top: 14px;
+  img{
+    height: 100%;
+    width: auto;
+  }
+}
+
+.navigation{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  nav{
+    text-align: center;
+    width: 100%;
+    background-color: white;
+    line-height: 1.5;
+    .menu-link{
+      width: fit-content;
+      margin: auto;
+      &:hover{
+        border-bottom: 1px solid black;
+      }
+    }
+  }
+}
+
+#navItems{
+  position: absolute;
+  top: -150px;
+  transition: all 0.4s ease-in-out;
+  z-index: -1;
+  &.active{
+    top: 100px;
+  }
+}
+
+.lang-switcher{
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 999;
+  &:hover{
+    border-bottom: 1px solid black;
+  }
+}
+
+.container{
+  margin-top: 110px;
+}
+
+.event-wrapper{
+  padding: 2vw;
+  .title{
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    h1{
+      max-width: 300px;
+    }
+  }
+  .date-time{
+    font-size: 24px;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

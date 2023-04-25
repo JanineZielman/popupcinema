@@ -4,43 +4,44 @@ import { PrismicNextImage } from "@prismicio/next";
 
 import { linkResolver } from "../prismicio";
 
-const FlagIcon = ({ lang }) => {
-  const code = lang.substring(3).toLowerCase();
-
-  return <span className={`fi fi-${code}`} />;
-};
-
 export const Header = ({ alternateLanguages = [], navigation, settings }) => {
+
+  function toggleMenu() {
+    var element = document.getElementById("navItems");
+    element.classList.toggle("active");
+  }
+
   return (
     <header>
-      <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-3 leading-none">
-        <PrismicLink href="/">
-          {prismicH.isFilled.image(settings.data.logo) && (
-            <PrismicNextImage field={settings.data.logo} />
-          )}
-        </PrismicLink>
-        <nav>
-          <ul className="flex flex-wrap gap-6 md:gap-10">
-            {navigation.data?.links.map((item) => (
-              <li
-                key={prismicH.asText(item.label)}
-                className="font-semibold tracking-tight text-slate-800"
-              >
-                <PrismicLink field={item.link}>
-                  <PrismicText field={item.label} />
-                </PrismicLink>
-              </li>
-            ))}
-            {alternateLanguages.map((lang) => (
-              <li key={lang.lang}>
-                <PrismicLink href={linkResolver(lang)} locale={lang.lang}>
-                  <span className="sr-only">{lang.lang}</span>
-                  <FlagIcon lang={lang.lang} />
-                </PrismicLink>
-              </li>
-            ))}
-          </ul>
+      <div className="navigation">
+        <div className="logo" onClick={toggleMenu}>
+          <PrismicLink href="/">
+            {prismicH.isFilled.image(settings.data.logo) && (
+              <PrismicNextImage field={settings.data.logo} />
+            )}
+          </PrismicLink>
+        </div>
+        <nav id="navItems">
+          {navigation.data?.links.map((item) => (
+            <div
+              key={prismicH.asText(item.label)}
+              className="menu-link"
+            >
+              <PrismicLink field={item.link}>
+                <PrismicText field={item.label} />
+              </PrismicLink>
+            </div>
+          ))}
         </nav>
+      </div>
+      <div className="lang-switcher">
+        {alternateLanguages.map((lang) => (
+          <div key={lang.lang} className="lang">
+            <PrismicLink href={linkResolver(lang)} locale={lang.lang}>
+              <span>{lang.lang.slice(0,2)}</span>
+            </PrismicLink>
+          </div>
+        ))}
       </div>
     </header>
   );
