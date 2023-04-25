@@ -76,8 +76,8 @@ h1{
 
 .lang-switcher{
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 14px;
+  right: 2vw;
   z-index: 999;
   &:hover{
     border-bottom: 1px solid black;
@@ -86,6 +86,26 @@ h1{
 
 .container{
   margin-top: 110px;
+}
+
+.events{
+  .event-wrapper:nth-child(even){
+    .gradient{
+      flex-direction: row;
+    }
+    .title{
+      text-align: left;
+      justify-content: flex-start;
+    }
+    .info-wrapper{
+      text-align: right;
+    }
+    .date-time{
+      margin-right: 0;
+      margin-left: auto;
+      justify-content: flex-end;
+    }
+  }
 }
 
 .event-wrapper{
@@ -99,7 +119,7 @@ h1{
   }
   .location{
     text-align: center;
-    font-size: 24px;
+    font-size: 30px;
     line-height: 1;
     margin-bottom: 10px;
   }

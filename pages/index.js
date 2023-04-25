@@ -18,7 +18,7 @@ const Index = ({ events, navigation, settings }) => {
       <Head>
         <title>{prismicH.asText(settings.data.siteTitle)}</title>
       </Head>
-      <div className="container">
+      <div className="container events">
         {events.map((item, i) => {
           return(
             <div className="event-wrapper" key={`event${i}`}>

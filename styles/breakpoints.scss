@@ -14,4 +14,7 @@
       width: 100%;
     }
   }
+  .events .event-wrapper:nth-child(even) .gradient{
+    flex-direction: column;
+  }
 }
