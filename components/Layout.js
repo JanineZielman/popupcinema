@@ -8,7 +8,7 @@ export const Layout = ({
   children,
 }) => {
   return (
-    <div className="text-slate-800">
+    <>
       <Header
         alternateLanguages={alternateLanguages}
         navigation={navigation}
@@ -16,6 +16,6 @@ export const Layout = ({
       />
       <main>{children}</main>
       <Footer settings={settings} />
-    </div>
+    </>
   );
 };

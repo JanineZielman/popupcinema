@@ -1,12 +1,14 @@
 @import "colors.scss";
 
-body{
-  font-family: "new-hero", sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: $white;
+body,html{
   width: 100vw;
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: "new-hero", sans-serif;
+  background-color: $white;
 }
 
 a{
