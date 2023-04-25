@@ -166,7 +166,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = never;
+type PageDocumentDataSlicesSlice = TextBlockSlice;
 /**
  * Page document from Prismic
  *
@@ -213,11 +213,60 @@ interface SettingsDocumentData {
  */
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
 export type AllDocumentTypes = EventDocument | LocationDocument | NavigationDocument | PageDocument | SettingsDocument;
+/**
+ * Primary content in TextBlock → Primary
+ *
+ */
+interface TextBlockSliceDefaultPrimary {
+    /**
+     * Title field in *TextBlock → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: text_block.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Text field in *TextBlock → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_block.primary.text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    text: prismicT.RichTextField;
+}
+/**
+ * Default variation for TextBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `TextBlock`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextBlockSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TextBlockSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *TextBlock*
+ *
+ */
+type TextBlockSliceVariation = TextBlockSliceDefault;
+/**
+ * TextBlock Shared Slice
+ *
+ * - **API ID**: `text_block`
+ * - **Description**: `TextBlock`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type TextBlockSlice = prismicT.SharedSlice<"text_block", TextBlockSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { EventDocumentData, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes };
+        export type { EventDocumentData, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
     }
 }
