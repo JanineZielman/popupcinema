@@ -117,7 +117,7 @@ h1{
 .event-wrapper{
   margin-bottom: 48px;
   .gradient{
-    padding: 24px 2vw;
+    padding: 48px 2vw;
     display: flex;
     flex-direction: row-reverse;
     align-items: stretch;
@@ -148,9 +148,6 @@ h1{
   .event-info{
     font-size: 18px;
     margin-bottom: 24px;
-    b{
-      font-weight: 500;
-    }
   }
   .date-time{
     font-size: 24px;

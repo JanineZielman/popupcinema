@@ -8,7 +8,7 @@ $green: #24886c;
 $white: #ededed;
 
 .gradient{
-  &:after{
+  &:before{
     content: "";
     position: absolute;
     width: 100%;
@@ -17,19 +17,42 @@ $white: #ededed;
     top: 0;
     left: 0;
   }
+  &:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    top: 0;
+    left: 0;
+  }
+  &.spruit-cinema{
+    &:before{
+      background: radial-gradient(circle, $green 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%);
+    }
+    &:after{
+      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $yellow 30%, $yellow 50%, $yellow 70%, rgba(255,255,255,0) 100%);
+    }
+  }
 }
 
 //orange
 .may1, .jun1, .jul1, .aug1{
-  background: radial-gradient(circle, $orange 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
+  &:before{
+    background: radial-gradient(circle, $orange 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%);
+  }
 }
 //purple
 .mar1, .apr1, .sep1, .oct1{
-  background: radial-gradient(circle, $purple 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
+  &:before{
+    background: radial-gradient(circle, $purple 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%);
+  }
 }
 //blue
 .jan1, .feb1, .nov1, .dev1{
-  background: radial-gradient(circle, $blue 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
+  &:before{
+    background: radial-gradient(circle, $blue 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%);
+  }
 }
 
 //yellow
@@ -54,5 +77,86 @@ $white: #ededed;
 .aug2, .okt2, .dec2{
   &:after{
     background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $lavender 30%, $lavender 50%, $lavender 70%, rgba(255,255,255,0) 100%);
+  }
+}
+
+
+
+// times
+
+.time12{
+  &:before{
+    margin-left: -30%;
+  }
+}
+
+.time13{
+  &:before{
+    margin-left: -25%;
+  }
+}
+
+.time14{
+  &:before{
+    margin-left: -20%;
+  }
+}
+
+.time15{
+  &:before{
+    margin-left: -15%;
+  }
+}
+
+.time16{
+  &:before{
+    margin-left: -10%;
+  }
+}
+
+.time17{
+  &:before{
+    margin-left: -5%;
+  }
+}
+
+.time18{
+  &:before{
+  }
+}
+
+.time19{
+  &:before{
+    margin-left: 5%;
+  }
+}
+
+.time20{
+  &:before{
+    margin-left: 10%;
+  }
+}
+
+.time21{
+  &:before{
+    margin-left: 15%;
+  }
+}
+
+.time22{
+  &:before{
+    margin-left: 20%;
+  }
+}
+
+.time23{
+  &:before{
+    margin-left: 25%;
+  }
+}
+
+.time00{
+  &:before{
+    margin-left: 30%;
   }
 }
