@@ -1,7 +1,12 @@
+@import "colors.scss";
+
 body{
   font-family: "new-hero", sans-serif;
   margin: 0;
   padding: 0;
+  background-color: $white;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 a{
@@ -15,16 +20,17 @@ p a{
 
 h1, h2, h3, h4{
   font-weight: 400;
+  line-height: 1.2;
 }
 
 h1{
-  font-size: 48px;
+  font-size: 64px;
 }
 
 .logo{
   height: 75px;
   width: auto;
-  background-color: white;
+  background-color: $white;
   padding-top: 14px;
   cursor: pointer;
   img{
@@ -42,7 +48,7 @@ h1{
   z-index: 999;
   top: 0;
   width: 100%;
-  background-color: white;
+  background-color: $white;
   &:hover{
     #navItems{
       top: 89px;
@@ -51,7 +57,7 @@ h1{
   nav{
     text-align: center;
     width: 100%;
-    background-color: white;
+    background-color: $white;
     line-height: 1.5;
     padding: 14px 0;
     .menu-link{
@@ -89,6 +95,7 @@ h1{
 }
 
 .events{
+  width: 100%;
   .event-wrapper:nth-child(even){
     .gradient{
       flex-direction: row;
@@ -103,7 +110,6 @@ h1{
     .date-time{
       margin-right: 0;
       margin-left: auto;
-      justify-content: flex-end;
     }
   }
 }
@@ -111,11 +117,12 @@ h1{
 .event-wrapper{
   margin-bottom: 48px;
   .gradient{
-    background: radial-gradient(circle, rgba(223,135,225,1) 0%, rgba(242,245,247,0) 38%);
-    padding: 0 2vw;
+    padding: 24px 2vw;
     display: flex;
     flex-direction: row-reverse;
     align-items: stretch;
+    position: relative;
+    // min-height: 40vh;
   }
   .location{
     text-align: center;
@@ -129,7 +136,7 @@ h1{
     text-align: right;
     width: 50%;
     h1{
-      max-width: 300px;
+      max-width: 500px;
     }
   }
   .info-wrapper{
@@ -141,6 +148,9 @@ h1{
   .event-info{
     font-size: 18px;
     margin-bottom: 24px;
+    b{
+      font-weight: 500;
+    }
   }
   .date-time{
     font-size: 24px;

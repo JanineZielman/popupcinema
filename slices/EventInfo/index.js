@@ -11,7 +11,7 @@ const EventInfo = ({ slice }) => {
     <>
       {slice.items.map((item, i) => {
         return(
-          <div>{item.label}: {item.value}</div>
+          <div><span>{item.label}</span> <b>{item.value}</b></div>
         )
       })}
     </>

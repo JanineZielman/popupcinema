@@ -25,7 +25,7 @@ const Index = ({ events, navigation, settings }) => {
               <div className="location">
                 {item.data.location.data?.title && item.data.location.data.title}
               </div>
-              <div className="gradient">
+              <div className={`gradient ${Moment(item.data.date).format("MMM").toLowerCase()}1 ${Moment(item.data.date).format("MMM").toLowerCase()}2`}>
                 <div className="title">
                   <h1>{prismicH.asText(item.data.title)}</h1>
                 </div>
