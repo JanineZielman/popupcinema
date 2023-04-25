@@ -15,11 +15,9 @@ export const Header = ({ alternateLanguages = [], navigation, settings }) => {
     <header>
       <div className="navigation">
         <div className="logo" onClick={toggleMenu}>
-          <PrismicLink href="/">
-            {prismicH.isFilled.image(settings.data.logo) && (
-              <PrismicNextImage field={settings.data.logo} />
-            )}
-          </PrismicLink>
+          {prismicH.isFilled.image(settings.data.logo) && (
+            <PrismicNextImage field={settings.data.logo} />
+          )}
         </div>
         <nav id="navItems">
           {navigation.data?.links.map((item) => (
