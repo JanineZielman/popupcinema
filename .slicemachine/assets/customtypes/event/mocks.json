@@ -1,7 +1,7 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "garage"
+    "value": "answer"
   },
   "title": {
     "__TYPE__": "StructuredTextContent",
@@ -9,7 +9,7 @@
       {
         "type": "heading1",
         "content": {
-          "text": "Around"
+          "text": "Snake"
         }
       }
     ]
@@ -17,11 +17,11 @@
   "date": {
     "__TYPE__": "FieldContent",
     "type": "Date",
-    "value": "2020-02-10"
+    "value": "2019-11-13"
   },
   "time": {
     "__TYPE__": "FieldContent",
-    "value": "production",
+    "value": "sky",
     "type": "Text"
   },
   "location": {
@@ -30,5 +30,42 @@
       "__TYPE__": "DocumentLink",
       "id": "mock_document_id"
     }
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": [
+      {
+        "key": "event_info$4c8cae09-b42a-476d-a1fc-a56bb00bc53b",
+        "name": "event_info",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {},
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": [
+                [
+                  "label",
+                  {
+                    "__TYPE__": "FieldContent",
+                    "value": "leather",
+                    "type": "Text"
+                  }
+                ],
+                [
+                  "value",
+                  {
+                    "__TYPE__": "FieldContent",
+                    "value": "year",
+                    "type": "Text"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      }
+    ]
   }
 }

@@ -5,6 +5,7 @@ import { PrismicPreview } from "@prismicio/next";
 import { repositoryName, linkResolver } from "../prismicio";
 
 import "../styles/globals.scss";
+import "../styles/breakpoints.scss";
 
 export default function App({ Component, pageProps }) {
   return (

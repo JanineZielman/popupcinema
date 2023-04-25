@@ -52,7 +52,23 @@ interface EventDocumentData {
      *
      */
     location: prismicT.RelationField<"location">;
+    /**
+     * Slice Zone field in *Event*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: event.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<EventDocumentDataSlicesSlice>;
 }
+/**
+ * Slice for *Event → Slice Zone*
+ *
+ */
+type EventDocumentDataSlicesSlice = EventInfoSlice;
 /**
  * Event document from Prismic
  *
@@ -214,6 +230,55 @@ interface SettingsDocumentData {
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
 export type AllDocumentTypes = EventDocument | LocationDocument | NavigationDocument | PageDocument | SettingsDocument;
 /**
+ * Item in EventInfo → Items
+ *
+ */
+export interface EventInfoSliceDefaultItem {
+    /**
+     * Label field in *EventInfo → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: event_info.items[].label
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    label: prismicT.KeyTextField;
+    /**
+     * Value field in *EventInfo → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: event_info.items[].value
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    value: prismicT.KeyTextField;
+}
+/**
+ * Default variation for EventInfo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `EventInfo`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type EventInfoSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<EventInfoSliceDefaultItem>>;
+/**
+ * Slice variation for *EventInfo*
+ *
+ */
+type EventInfoSliceVariation = EventInfoSliceDefault;
+/**
+ * EventInfo Shared Slice
+ *
+ * - **API ID**: `event_info`
+ * - **Description**: `EventInfo`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type EventInfoSlice = prismicT.SharedSlice<"event_info", EventInfoSliceVariation>;
+/**
  * Primary content in TextBlock → Primary
  *
  */
@@ -267,6 +332,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { EventDocumentData, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
+        export type { EventDocumentData, EventDocumentDataSlicesSlice, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, EventInfoSliceDefaultItem, EventInfoSliceDefault, EventInfoSliceVariation, EventInfoSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
     }
 }

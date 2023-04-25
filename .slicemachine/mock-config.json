@@ -71,6 +71,11 @@
       "default": {
         "primary": {}
       }
+    },
+    "EventInfo": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }

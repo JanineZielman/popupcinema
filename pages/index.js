@@ -1,7 +1,9 @@
 import Head from "next/head";
+import { SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../prismicio";
+import { components } from "../slices";
 import { Layout } from "../components/Layout";
 import Moment from 'moment';
 
@@ -27,9 +29,14 @@ const Index = ({ events, navigation, settings }) => {
                 <div className="title">
                   <h1>{prismicH.asText(item.data.title)}</h1>
                 </div>
-                <div className="date-time">
-                  {item.data.date &&<span>{Moment(item.data.date).format("DD.MM.Y")}</span>}
-                  {item.data.time &&<span>{item.data.time} uur</span>}
+                <div className="info-wrapper">
+                  <div className="event-info">
+                    <SliceZone slices={item.data.slices} components={components} />
+                  </div>
+                  <div className="date-time">
+                    {item.data.date &&<span>{Moment(item.data.date).format("DD.MM.Y")}</span>}
+                    {item.data.time &&<span>{item.data.time} uur</span>}
+                  </div>
                 </div>
               </div>
             </div>

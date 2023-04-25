@@ -44,6 +44,17 @@
             "location"
           ]
         }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "event_info": {
+              "type": "SharedSlice"
+            }
+          }
+        }
       }
     }
   }

@@ -1,0 +1,17 @@
+@media only screen and (max-width: 600px) {
+  .event-wrapper{
+    .gradient{
+      padding: 0 4vw;
+      flex-direction: column;
+    }
+    .title{
+      width: 100%;
+      h1{
+        max-width: 80%;
+      }
+    }
+    .info-wrapper{
+      width: 100%;
+    }
+  }
+}

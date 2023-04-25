@@ -16,7 +16,7 @@ export const Header = ({ alternateLanguages = [], navigation, settings }) => {
       <div className="navigation">
         <div className="logo" onClick={toggleMenu}>
           {prismicH.isFilled.image(settings.data.logo) && (
-            <PrismicNextImage field={settings.data.logo} />
+            <PrismicNextImage field={settings.data.logo} alt="logo"/>
           )}
         </div>
         <nav id="navItems">

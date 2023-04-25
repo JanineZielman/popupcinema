@@ -93,6 +93,9 @@ h1{
   .gradient{
     background: radial-gradient(circle, rgba(223,135,225,1) 0%, rgba(242,245,247,0) 38%);
     padding: 0 2vw;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: stretch;
   }
   .location{
     text-align: center;
@@ -104,9 +107,20 @@ h1{
     display: flex;
     justify-content: flex-end;
     text-align: right;
+    width: 50%;
     h1{
       max-width: 300px;
     }
+  }
+  .info-wrapper{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .event-info{
+    font-size: 18px;
+    margin-bottom: 24px;
   }
   .date-time{
     font-size: 24px;
