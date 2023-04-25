@@ -1,7 +1,7 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "sudden"
+    "value": "garage"
   },
   "title": {
     "__TYPE__": "StructuredTextContent",
@@ -9,7 +9,7 @@
       {
         "type": "heading1",
         "content": {
-          "text": "Silver"
+          "text": "Around"
         }
       }
     ]
@@ -17,11 +17,18 @@
   "date": {
     "__TYPE__": "FieldContent",
     "type": "Date",
-    "value": "2013-04-06"
+    "value": "2020-02-10"
   },
   "time": {
     "__TYPE__": "FieldContent",
-    "value": "either",
+    "value": "production",
     "type": "Text"
+  },
+  "location": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "DocumentLink",
+      "id": "mock_document_id"
+    }
   }
 }

@@ -1,5 +1,7 @@
 body{
   font-family: "new-hero", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 a{
@@ -13,6 +15,10 @@ p a{
 
 h1, h2, h3, h4{
   font-weight: 400;
+}
+
+h1{
+  font-size: 48px;
 }
 
 .logo{
@@ -41,6 +47,7 @@ h1, h2, h3, h4{
     width: 100%;
     background-color: white;
     line-height: 1.5;
+    padding: 14px 0;
     .menu-link{
       width: fit-content;
       margin: auto;
@@ -54,10 +61,10 @@ h1, h2, h3, h4{
 #navItems{
   position: absolute;
   top: -150px;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease;
   z-index: -1;
   &.active{
-    top: 100px;
+    top: 89px;
   }
 }
 
@@ -76,7 +83,17 @@ h1, h2, h3, h4{
 }
 
 .event-wrapper{
-  padding: 2vw;
+  margin-bottom: 2vw;
+  .gradient{
+    background: radial-gradient(circle, rgba(223,135,225,1) 0%, rgba(242,245,247,0) 38%);
+    padding: 0 2vw;
+  }
+  .location{
+    text-align: center;
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
   .title{
     display: flex;
     justify-content: flex-end;

@@ -34,6 +34,16 @@
           "label": "Time",
           "placeholder": "20:00"
         }
+      },
+      "location": {
+        "type": "Link",
+        "config": {
+          "label": "Location",
+          "select": "document",
+          "customtypes": [
+            "location"
+          ]
+        }
       }
     }
   }

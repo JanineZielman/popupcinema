@@ -34,7 +34,8 @@
         }
       }
     },
-    "event": {}
+    "event": {},
+    "location": {}
   },
   "slices": {
     "Text": {

@@ -20,12 +20,17 @@ const Index = ({ events, navigation, settings }) => {
         {events.map((item, i) => {
           return(
             <div className="event-wrapper" key={`event${i}`}>
-              <div className="title">
-                <h1>{prismicH.asText(item.data.title)}</h1>
+              <div className="location">
+                {item.data.location.data?.title && item.data.location.data.title}
               </div>
-              <div className="date-time">
-                {item.data.date &&<span>{Moment(item.data.date).format("DD.MM.Y")}</span>}
-                {item.data.time &&<span>{item.data.time} uur</span>}
+              <div className="gradient">
+                <div className="title">
+                  <h1>{prismicH.asText(item.data.title)}</h1>
+                </div>
+                <div className="date-time">
+                  {item.data.date &&<span>{Moment(item.data.date).format("DD.MM.Y")}</span>}
+                  {item.data.time &&<span>{item.data.time} uur</span>}
+                </div>
               </div>
             </div>
           )
@@ -40,7 +45,14 @@ export default Index;
 export async function getStaticProps({ locale, previewData }) {
   const client = createClient({ previewData });
 
-  const events = await client.getAllByType("event", { lang: locale });
+  const events = await client.getAllByType("event", { 
+    lang: locale,
+    orderings: {
+			field: 'my.event.date',
+			direction: 'asc',
+		},
+    fetchLinks: 'location.title'
+  });
   const navigation = await client.getSingle("navigation", { lang: locale });
   const settings = await client.getSingle("settings", { lang: locale });
 
