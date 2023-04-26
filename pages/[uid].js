@@ -15,11 +15,11 @@ const Page = ({ page, navigation, settings }) => {
     >
       <Head>
         <title>
-          {prismicH.asText(page.data.title)} |
-          {prismicH.asText(settings.data.siteTitle)}
+          {prismicH.asText(page.data.title)} | {prismicH.asText(settings.data.siteTitle)}
         </title>
       </Head>
-      <div className="container">
+      <div className="container page">
+        <h1>{prismicH.asText(page.data.title)}</h1>
         <SliceZone slices={page.data.slices} components={components} />
       </div>
     </Layout>

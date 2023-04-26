@@ -2,16 +2,19 @@
 
 import Embed from './Embed';
 import EventInfo from './EventInfo';
+import Image from './Image';
 import TextBlock from './TextBlock';
 
 export {
 	Embed,
 	EventInfo,
+	Image,
 	TextBlock,
 };
 
 export const components = {
 	embed: Embed,
 	event_info: EventInfo,
+	image: Image,
 	text_block: TextBlock,
 };

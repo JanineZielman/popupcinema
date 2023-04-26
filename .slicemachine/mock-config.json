@@ -82,6 +82,11 @@
       "default": {
         "primary": {}
       }
+    },
+    "Image": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }

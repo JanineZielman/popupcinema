@@ -28,6 +28,9 @@
           "choices": {
             "text_block": {
               "type": "SharedSlice"
+            },
+            "image": {
+              "type": "SharedSlice"
             }
           }
         }

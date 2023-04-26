@@ -1,7 +1,7 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "turn"
+    "value": "donkey"
   },
   "title": {
     "__TYPE__": "StructuredTextContent",
@@ -9,7 +9,7 @@
       {
         "type": "heading1",
         "content": {
-          "text": "Attack"
+          "text": "Adventure"
         }
       }
     ]
@@ -18,7 +18,7 @@
     "__TYPE__": "SliceContentType",
     "value": [
       {
-        "key": "text_block$92ee2f87-b405-4e3e-88ca-5ad33b536624",
+        "key": "text_block$2b54fde7-07ca-4ba2-a0aa-e2b4c712c762",
         "name": "text_block",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -30,7 +30,7 @@
                 {
                   "type": "heading2",
                   "content": {
-                    "text": "Matter"
+                    "text": "Place"
                   }
                 }
               ]
@@ -41,10 +41,47 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Sunt proident ad dolor aliquip cillum ex nulla cillum eu. Ipsum consectetur qui fugiat. In proident incididunt duis est laboris elit."
+                    "text": "Proident incididunt cupidatat elit laboris do aute dolor ut ipsum ex."
                   }
                 }
               ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      },
+      {
+        "key": "image$3059a04a-a69f-449f-b888-cb5091188d13",
+        "name": "image",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "image": {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
+                "width": 3199,
+                "height": 3199
+              },
+              "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869?rect=0%2C0%2C3199%2C3199&w=1080&h=1080",
+              "width": 1080,
+              "height": 1080,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
             }
           },
           "items": [
