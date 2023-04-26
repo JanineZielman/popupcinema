@@ -1,5 +1,9 @@
 @import "colors.scss";
 
+*{
+  box-sizing: border-box;
+}
+
 body,html{
   width: 100vw;
   overflow-x: hidden;
