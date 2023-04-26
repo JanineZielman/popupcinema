@@ -37,12 +37,10 @@ const Event = ({ page, navigation, settings }) => {
                   <h1>{prismicH.asText(page.data.title)}</h1>
                 </div>
                 <div className="info-wrapper">
-                  <div className="event-info">
-                    {/* <SliceZone slices={page.data.slices} components={components} /> */}
-                  </div>
                   <div className="date-time">
                     {page.data.date &&<span>{Moment(page.data.date).format("DD.MM.Y")}</span>}
                     {page.data.time &&<span>{page.data.time} uur</span>}
+                    {page.data.category.data?.title && <span><a href={`/category/${page.data.category.uid}`}>{page.data.category.data.title}</a></span>}
                   </div>
                 </div>
               </div>
@@ -62,7 +60,10 @@ export default Event;
 export async function getStaticProps({ params, locale, previewData }) {
   const client = createClient({ previewData });
 
-  const page = await client.getByUID("event", params.uid, { lang: locale });
+  const page = await client.getByUID("event", params.uid, { 
+    lang: locale,
+    fetchLinks: 'location.title category.title' 
+  });
   const navigation = await client.getSingle("navigation", { lang: locale });
   const settings = await client.getSingle("settings", { lang: locale });
 

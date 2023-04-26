@@ -20,6 +20,12 @@ p a{
   text-decoration: underline;
 }
 
+span a{
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
 h1, h2, h3, h4{
   font-weight: 400;
   line-height: 1.2;
@@ -28,6 +34,11 @@ h1, h2, h3, h4{
 h1{
   font-size: 64px;
   margin: 24px 0;
+}
+
+h2{
+  font-size: 30px;
+  margin: 14px 0;
 }
 
 .logo{
@@ -189,7 +200,7 @@ h1{
   max-width: 900px;
   display: block;
   margin: auto;
-  padding: 2vw;
+  padding: 0 2vw;
 }
 
 .embed{
