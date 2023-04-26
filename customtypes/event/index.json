@@ -52,6 +52,12 @@
           "choices": {
             "event_info": {
               "type": "SharedSlice"
+            },
+            "text_block": {
+              "type": "SharedSlice"
+            },
+            "embed": {
+              "type": "SharedSlice"
             }
           }
         }

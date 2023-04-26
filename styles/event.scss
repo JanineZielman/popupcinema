@@ -1,0 +1,80 @@
+@import "colors.scss";
+
+.event-page{
+  margin-top: 0px;
+  animation: animation 0.5s linear 0s;
+  animation-fill-mode: forwards;
+  height: 40vh;
+  overflow: hidden;
+
+  .event-wrapper{
+    margin-bottom: 0;
+    height: 100%;
+    .info-wrapper{
+      justify-content: flex-start;
+      margin-top: 30px;
+    }
+  }
+
+  .even{
+    .gradient-content{
+      flex-direction: row;
+    }
+    .title{
+      text-align: left;
+      justify-content: flex-start;
+    }
+    .info-wrapper{
+      text-align: right;
+    }
+    .date-time{
+      margin-right: 0;
+      margin-left: auto;
+    }
+  }
+  
+  .content{
+    width: 96vw;
+    margin-left: 2vw;
+  }
+  .content-wrapper{
+    height: 100%;
+  }
+  .gradient{
+    height: 100%;
+    &:before{
+      opacity: 0.4;
+      animation: fadeIn 0.5s linear 0s, animation 0.5s linear 0s;
+      animation-fill-mode: forwards;
+      position: fixed;
+      height: 40vh;
+    }
+    &:after{
+      opacity: 0.4;
+      animation: fadeIn 0.5s linear 0s, animation 0.5s linear 0s;
+      animation-fill-mode: forwards;
+      position: fixed;
+      height: 40vh;
+    }
+  }
+
+  .gradient-content{
+    padding: 0 2vw;
+    margin-top: 90px;
+  }
+}
+
+@keyframes fadeIn {
+  0%   {opacity: 1}
+  100% {opacity: 0.4}
+}
+
+@keyframes animation {
+  0%   {height: 40vh;}
+  100% {height: 100vh; overflow-y: scroll;}
+}
+
+@keyframes animation2 {
+  0%   {height: 40vh;}
+  100% {height: 100%;}
+}

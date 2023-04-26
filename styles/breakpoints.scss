@@ -3,7 +3,7 @@
     font-size: 48px;
   }
   .event-wrapper{
-    .gradient{
+    .gradient-content{
       padding: 0 4vw;
       flex-direction: column;
     }
@@ -17,7 +17,7 @@
       width: 100%;
     }
   }
-  .events .event-wrapper:nth-child(even) .gradient{
+  .events .event-wrapper:nth-child(even) .gradient-content{
     flex-direction: column;
   }
 }

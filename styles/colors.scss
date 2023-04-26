@@ -58,25 +58,25 @@ $white: #ededed;
 //yellow
 .may2, .mar2, .jan2{
   &:after{
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $yellow 30%, $yellow 50%, $yellow 70%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $yellow 35%, $yellow 50%, $yellow 65%, rgba(255,255,255,0) 100%);
   }
 }
 //orange
 .jun2, .apr2, .feb2{
   &:after{
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $orange 30%, $orange 50%, $orange 70%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $orange 35%, $orange 50%, $orange 65%, rgba(255,255,255,0) 100%);
   }
 }
 //pink
 .jul2, .sep2, .nov2{
   &:after{
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $pink 30%, $pink 50%, $pink 70%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $pink 35%, $pink 50%, $pink 65%, rgba(255,255,255,0) 100%);
   }
 }
 //lavender
 .aug2, .okt2, .dec2{
   &:after{
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $lavender 30%, $lavender 50%, $lavender 70%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $lavender 35%, $lavender 50%, $lavender 65%, rgba(255,255,255,0) 100%);
   }
 }
 

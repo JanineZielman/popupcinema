@@ -27,6 +27,7 @@ h1, h2, h3, h4{
 
 h1{
   font-size: 64px;
+  margin: 24px 0;
 }
 
 .logo{
@@ -96,35 +97,44 @@ h1{
   margin-top: 110px;
 }
 
+
+// events
+
 .events{
   width: 100%;
-  .event-wrapper:nth-child(even){
-    .gradient{
-      flex-direction: row;
-    }
-    .title{
-      text-align: left;
-      justify-content: flex-start;
-    }
-    .info-wrapper{
-      text-align: right;
-    }
-    .date-time{
-      margin-right: 0;
-      margin-left: auto;
-    }
+}
+
+.event-wrapper.even-false{
+  .gradient-content{
+    flex-direction: row;
+  }
+  .title{
+    text-align: left;
+    justify-content: flex-start;
+  }
+  .info-wrapper{
+    text-align: right;
+  }
+  .date-time{
+    margin-right: 0;
+    margin-left: auto;
   }
 }
 
 .event-wrapper{
-  margin-bottom: 48px;
-  .gradient{
+  position: relative;
+  width: 100%;
+  .content-wrapper{
+    position: relative;
+    margin-bottom: 48px;
+  }
+  .gradient-content{
     padding: 48px 2vw;
+    width: 96vw;
     display: flex;
     flex-direction: row-reverse;
     align-items: stretch;
     position: relative;
-    // min-height: 70vh;
   }
   .location{
     text-align: center;
@@ -147,10 +157,6 @@ h1{
     flex-direction: column;
     justify-content: flex-end;
   }
-  .event-info{
-    font-size: 18px;
-    margin-bottom: 24px;
-  }
   .date-time{
     font-size: 24px;
     width: 100%;
@@ -161,9 +167,41 @@ h1{
 }
 
 
+
+// basic blocks
+
+.event-info-block{
+  font-size: 18px;
+  margin: auto;
+  margin-bottom: 24px;
+  column-count: 2;
+  border-top: 2px solid black;
+  padding-top: 14px;
+  width: 100%;
+  max-width: 900px;
+}
+
 .text-block{
   max-width: 900px;
   display: block;
   margin: auto;
   padding: 2vw;
+}
+
+.embed{
+  display: block;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 24px auto;
+  // margin-bottom: -30vh;
+  // mask-image: radial-gradient(circle, red 0%, rgba(0,0,0,0) 50%);
+  // mask-image: linear-gradient(90deg, rgba(255,255,255,0) 0%, $orange 35%, $orange 50%, $orange 65%, rgba(255,255,255,0) 100%);
+  iframe{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    mix-blend-mode: multiply;
+    object-fit: cover;
+    box-shadow: 0px 0px 50px rgba(0,0,0,0.5);
+  }
 }

@@ -68,7 +68,7 @@ interface EventDocumentData {
  * Slice for *Event → Slice Zone*
  *
  */
-type EventDocumentDataSlicesSlice = EventInfoSlice;
+type EventDocumentDataSlicesSlice = EventInfoSlice | TextBlockSlice | EmbedSlice;
 /**
  * Event document from Prismic
  *
@@ -230,6 +230,45 @@ interface SettingsDocumentData {
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
 export type AllDocumentTypes = EventDocument | LocationDocument | NavigationDocument | PageDocument | SettingsDocument;
 /**
+ * Primary content in Embed → Primary
+ *
+ */
+interface EmbedSliceDefaultPrimary {
+    /**
+     * Embed field in *Embed → Primary*
+     *
+     * - **Field Type**: Embed
+     * - **Placeholder**: *None*
+     * - **API ID Path**: embed.primary.embed
+     * - **Documentation**: https://prismic.io/docs/core-concepts/embed
+     *
+     */
+    embed: prismicT.EmbedField;
+}
+/**
+ * Default variation for Embed Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Embed`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type EmbedSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<EmbedSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Embed*
+ *
+ */
+type EmbedSliceVariation = EmbedSliceDefault;
+/**
+ * Embed Shared Slice
+ *
+ * - **API ID**: `embed`
+ * - **Description**: `Embed`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type EmbedSlice = prismicT.SharedSlice<"embed", EmbedSliceVariation>;
+/**
  * Item in EventInfo → Items
  *
  */
@@ -332,6 +371,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { EventDocumentData, EventDocumentDataSlicesSlice, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, EventInfoSliceDefaultItem, EventInfoSliceDefault, EventInfoSliceVariation, EventInfoSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
+        export type { EventDocumentData, EventDocumentDataSlicesSlice, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, EmbedSliceDefaultPrimary, EmbedSliceDefault, EmbedSliceVariation, EmbedSlice, EventInfoSliceDefaultItem, EventInfoSliceDefault, EventInfoSliceVariation, EventInfoSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
     }
 }
