@@ -31,7 +31,7 @@ const Event = ({ page, navigation, settings }) => {
             {page.data.location.data?.title && page.data.location.data.title}
           </div>
           <div className="content-wrapper">
-            <div className={`gradient ${Moment(page.data.date).format("MMM").toLowerCase()}1 ${Moment(page.data.date).format("MMM").toLowerCase()}2 ${page.data.location.slug && page.data.location.slug} time${page.data.time?.slice(0, 2)}`}>
+            <div className={`gradient ${Moment(page.data.date).format("MMM").toLowerCase()}1 ${Moment(page.data.date).format("MMM").toLowerCase()}2 ${page.data.category.slug && page.data.category.slug} time${page.data.time?.slice(0, 2)}`}>
               <div className="gradient-content">
                 <div className="title">
                   <h1>{prismicH.asText(page.data.title)}</h1>

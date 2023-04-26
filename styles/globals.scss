@@ -118,6 +118,7 @@ h1{
   .date-time{
     margin-right: 0;
     margin-left: auto;
+    justify-content: flex-end;
   }
 }
 
@@ -160,9 +161,12 @@ h1{
   .date-time{
     font-size: 24px;
     width: 100%;
-    max-width: 300px;
+    max-width: 500px;
     display: flex;
-    justify-content: space-between;
+    span{
+      margin: 0 14px;
+    }
+    justify-content: flex-start;
   }
 }
 

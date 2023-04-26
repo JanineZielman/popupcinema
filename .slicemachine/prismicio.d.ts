@@ -6,6 +6,46 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Category documents */
+interface CategoryDocumentData {
+    /**
+     * Title field in *Category*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: category.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Slice Zone field in *Category*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: category.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<CategoryDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Category → Slice Zone*
+ *
+ */
+type CategoryDocumentDataSlicesSlice = TextBlockSlice;
+/**
+ * Category document from Prismic
+ *
+ * - **API ID**: `category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CategoryDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<CategoryDocumentData>, "category", Lang>;
 /** Content for Event documents */
 interface EventDocumentData {
     /**
@@ -52,6 +92,17 @@ interface EventDocumentData {
      *
      */
     location: prismicT.RelationField<"location">;
+    /**
+     * Category field in *Event*
+     *
+     * - **Field Type**: Content Relationship
+     * - **Placeholder**: *None*
+     * - **API ID Path**: event.category
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    category: prismicT.RelationField<"category">;
     /**
      * Slice Zone field in *Event*
      *
@@ -217,6 +268,17 @@ interface SettingsDocumentData {
      *
      */
     logo: prismicT.ImageField<never>;
+    /**
+     * Footer Text field in *Settings*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.footer_text
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    footer_text: prismicT.RichTextField;
 }
 /**
  * Settings document from Prismic
@@ -228,7 +290,7 @@ interface SettingsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
-export type AllDocumentTypes = EventDocument | LocationDocument | NavigationDocument | PageDocument | SettingsDocument;
+export type AllDocumentTypes = CategoryDocument | EventDocument | LocationDocument | NavigationDocument | PageDocument | SettingsDocument;
 /**
  * Primary content in Embed → Primary
  *
@@ -371,6 +433,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { EventDocumentData, EventDocumentDataSlicesSlice, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, EmbedSliceDefaultPrimary, EmbedSliceDefault, EmbedSliceVariation, EmbedSlice, EventInfoSliceDefaultItem, EventInfoSliceDefault, EventInfoSliceVariation, EventInfoSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
+        export type { CategoryDocumentData, CategoryDocumentDataSlicesSlice, CategoryDocument, EventDocumentData, EventDocumentDataSlicesSlice, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, EmbedSliceDefaultPrimary, EmbedSliceDefault, EmbedSliceVariation, EmbedSlice, EventInfoSliceDefaultItem, EventInfoSliceDefault, EventInfoSliceVariation, EventInfoSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
     }
 }

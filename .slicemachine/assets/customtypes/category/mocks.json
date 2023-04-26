@@ -1,0 +1,54 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "dish"
+  },
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "toward",
+    "type": "Text"
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": [
+      {
+        "key": "text_block$ba87333d-0dc5-433b-b513-10d1678880e4",
+        "name": "text_block",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading2",
+                  "content": {
+                    "text": "Arrive"
+                  }
+                }
+              ]
+            },
+            "text": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Ullamco dolor anim veniam. Culpa ut laborum reprehenderit."
+                  }
+                }
+              ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

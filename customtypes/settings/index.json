@@ -21,6 +21,15 @@
           "thumbnails": [],
           "label": "Logo"
         }
+      },
+      "footer_text": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Footer Text",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,em,strong,hyperlink"
+        }
       }
     }
   }
