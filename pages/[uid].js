@@ -15,7 +15,7 @@ const Page = ({ page, navigation, settings }) => {
     >
       <Head>
         <title>
-          {prismicH.asText(page.data.title)} |{" "}
+          {prismicH.asText(page.data.title)} |
           {prismicH.asText(settings.data.siteTitle)}
         </title>
       </Head>

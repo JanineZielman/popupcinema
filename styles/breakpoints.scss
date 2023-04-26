@@ -3,12 +3,16 @@
     font-size: 48px;
   }
   .event-wrapper{
+    .date-time{
+      flex-direction: column;
+    }
     .gradient-content{
-      padding: 0 4vw;
+      padding: 24px 4vw;
       flex-direction: column;
     }
     .title{
       width: 100%;
+      justify-content: center;
       h1{
         max-width: 100%;
       }
@@ -19,5 +23,26 @@
   }
   .events .event-wrapper:nth-child(even) .gradient-content{
     flex-direction: column;
+  }
+  .event-page{
+    h1{
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .gradient-content{
+      padding: 0;
+    }
+    .event-wrapper{
+      .info-wrapper{
+        margin-top: 0;
+        margin-bottom: 24px;
+      }
+    }
+  }
+  .event-info-block{
+    column-count: 1;
+  }
+  .text-block{
+    padding: 0;
   }
 }
