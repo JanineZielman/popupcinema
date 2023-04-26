@@ -1,5 +1,4 @@
 import { Header } from "./Header";
-import { Footer } from "./Footer";
 
 export const Layout = ({
   alternateLanguages,
@@ -14,8 +13,9 @@ export const Layout = ({
         navigation={navigation}
         settings={settings}
       />
-      <main>{children}</main>
-      <Footer settings={settings} />
+      <main>
+        {children}
+      </main>
     </>
   );
 };
