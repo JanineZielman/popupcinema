@@ -21,6 +21,17 @@
           "thumbnails": [],
           "label": "Logo"
         }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "logo_animation": {
+              "type": "SharedSlice"
+            }
+          }
+        }
       }
     }
   }

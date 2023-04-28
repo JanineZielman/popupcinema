@@ -303,7 +303,23 @@ interface SettingsDocumentData {
      *
      */
     logo: prismicT.ImageField<never>;
+    /**
+     * Slice Zone field in *Settings*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<SettingsDocumentDataSlicesSlice>;
 }
+/**
+ * Slice for *Settings → Slice Zone*
+ *
+ */
+type SettingsDocumentDataSlicesSlice = LogoAnimationSlice;
 /**
  * Settings document from Prismic
  *
@@ -443,6 +459,45 @@ type ImageSliceVariation = ImageSliceDefault;
  */
 export type ImageSlice = prismicT.SharedSlice<"image", ImageSliceVariation>;
 /**
+ * Item in LogoAnimation → Items
+ *
+ */
+export interface LogoAnimationSliceDefaultItem {
+    /**
+     * Text field in *LogoAnimation → Items*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: logo_animation.items[].text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    text: prismicT.KeyTextField;
+}
+/**
+ * Default variation for LogoAnimation Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `LogoAnimation`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type LogoAnimationSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<LogoAnimationSliceDefaultItem>>;
+/**
+ * Slice variation for *LogoAnimation*
+ *
+ */
+type LogoAnimationSliceVariation = LogoAnimationSliceDefault;
+/**
+ * LogoAnimation Shared Slice
+ *
+ * - **API ID**: `logo_animation`
+ * - **Description**: `LogoAnimation`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type LogoAnimationSlice = prismicT.SharedSlice<"logo_animation", LogoAnimationSliceVariation>;
+/**
  * Primary content in TextBlock → Primary
  *
  */
@@ -496,6 +551,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArchiveDocumentData, ArchiveDocument, CategoryDocumentData, CategoryDocumentDataSlicesSlice, CategoryDocument, EventDocumentData, EventDocumentDataSlicesSlice, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, EmbedSliceDefaultPrimary, EmbedSliceDefault, EmbedSliceVariation, EmbedSlice, EventInfoSliceDefaultItem, EventInfoSliceDefault, EventInfoSliceVariation, EventInfoSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
+        export type { ArchiveDocumentData, ArchiveDocument, CategoryDocumentData, CategoryDocumentDataSlicesSlice, CategoryDocument, EventDocumentData, EventDocumentDataSlicesSlice, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocumentDataSlicesSlice, SettingsDocument, AllDocumentTypes, EmbedSliceDefaultPrimary, EmbedSliceDefault, EmbedSliceVariation, EmbedSlice, EventInfoSliceDefaultItem, EventInfoSliceDefault, EventInfoSliceVariation, EventInfoSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, LogoAnimationSliceDefaultItem, LogoAnimationSliceDefault, LogoAnimationSliceVariation, LogoAnimationSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
     }
 }

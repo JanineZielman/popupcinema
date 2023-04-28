@@ -43,3 +43,39 @@
     }
   }
 }
+
+
+.archive{
+  .list{
+    width: 100%;
+    h1{
+      font-size: 40px;
+      margin: 14px 0;
+    }
+    .location, .date-time{
+      font-size: 24px;
+    }
+    .date-time{
+      span{
+        margin-right: 24px;
+      }
+    }
+    .content-wrapper{
+      width: 100%;
+    }
+    .list-item a{
+      width: 100%;
+      position: relative;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .gradient-content{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}

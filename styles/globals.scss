@@ -277,3 +277,39 @@ h2{
   padding-bottom: 14px;
   text-transform: lowercase;
 }
+
+
+// logo animation
+
+.logo-animation{
+  font-family: "new-hero", sans-serif;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  .loop{
+    height: 95px;
+    overflow: hidden;
+  }
+  
+  .loop h1{
+    font-weight: 400;
+  }
+  
+  
+  .loop h1:first-child{
+    margin-top: 0;
+    animation: logoAni 6s ease 1s infinite;
+    // animation-fill-mode: forwards;
+  }
+}
+
+@keyframes logoAni {
+  0%   {margin-top: 0px;}
+  20%  {margin-top: -100px;}
+  40%  {margin-top: -200px;}
+  60%  {margin-top: -300px;}
+  80%  {margin-top: -400px;}
+  100%  {margin-top: -500px;}
+}

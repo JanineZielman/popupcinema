@@ -21,7 +21,11 @@ const Index = ({ events, navigation, settings }) => {
         {events.map((item, i) => {
           const even = (i % 2 == 0);
           return(
-            <Event item={item} even={even} i={i} key={`event${i}`} location={true}/>
+            <>
+              {new Date(item.data.date).getTime() >= new Date().getTime() &&
+                <Event item={item} even={even} i={i} key={`event${i}`} location={true}/>
+              }
+            </>
           )
         })}
       </div>
