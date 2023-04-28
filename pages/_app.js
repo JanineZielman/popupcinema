@@ -7,6 +7,7 @@ import { repositoryName, linkResolver } from "../prismicio";
 import "../styles/globals.scss";
 import "../styles/event.scss";
 import "../styles/category.scss";
+import "../styles/archive.scss";
 import "../styles/breakpoints.scss";
 
 export default function App({ Component, pageProps }) {

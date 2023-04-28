@@ -1,12 +1,14 @@
 import * as prismicH from "@prismicio/helpers";
 import Moment from 'moment';
 
-export const Event = ({ item, even, i }) => {
+export const Event = ({ item, even, i, location }) => {
   return (
     <a className={`event-wrapper even-${even}`} key={`event${i}`} href={`/events/${item.uid}?even=${even}`}>
-      <div className="location">
-        {item.data.location.data?.title && item.data.location.data.title}
-      </div>
+      {location &&
+        <div className="location">
+          {item.data.location.data?.title && item.data.location.data.title}
+        </div>
+      }
       <div className="content-wrapper">
         <div className={`gradient ${Moment(item.data.date).format("MMM").toLowerCase()}1 ${Moment(item.data.date).format("MMM").toLowerCase()}2 ${item.data.category.slug && item.data.category.slug} time${item.data.time?.slice(0, 2)}`}>
           <div className="gradient-content">

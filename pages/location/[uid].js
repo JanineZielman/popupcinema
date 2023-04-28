@@ -1,15 +1,14 @@
 import Head from "next/head";
 import { SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
-import * as prismic from '@prismicio/client'
 
 import { createClient } from "../../prismicio";
 import { components } from "../../slices";
 import { Layout } from "../../components/Layout";
-import Moment from 'moment';
 import { Event } from "../../components/Event";
 
 const Location = ({ page, navigation, settings, events }) => {
+
 
   console.log(events)
   return (
@@ -33,9 +32,30 @@ const Location = ({ page, navigation, settings, events }) => {
           {events.map((item, i) => {
             const even = (i % 2 == 0);
             return(
-              <Event item={item} even={even} i={i} key={`eventwrap${i}`} />
+              <>
+                {new Date(item.data.date).getTime() >= new Date().getTime() &&
+                  <Event item={item} even={even} i={i} key={`eventwrap${i}`} location={false} />
+                }
+              </>
             )
           })}
+        </div>
+        <div className="archive">
+          <div className="text-block">
+            <h2>Archive</h2>
+          </div>
+          <div className="events">
+            {events.map((item, i) => {
+              const even = (i % 2 == 0);
+              return(
+                <>
+                  {new Date(item.data.date).getTime() < new Date().getTime() &&
+                    <Event item={item} even={even} i={i} key={`eventwrap${i}`} location={false}/>
+                  }
+                </>
+              )
+            })}
+          </div>
         </div>
       </div>
     </Layout>

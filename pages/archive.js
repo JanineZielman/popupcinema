@@ -27,7 +27,7 @@ const Archive = ({ page, events, navigation, settings }) => {
           {events.map((item, i) => {
             const even = (i % 2 == 0);
             return(
-              <Event item={item} even={even} i={i} key={`event${i}`}/>
+              <Event item={item} even={even} i={i} key={`event${i}`} location={true}/>
             )
           })}
         </div>
