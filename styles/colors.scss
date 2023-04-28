@@ -9,8 +9,8 @@ $white: #ededed;
 
 .gradient{
   background-size: cover;
-  background-image: url(gradient1920x1080.png);
-  filter: contrast(170%) ;
+  background-image: url(blue.png);
+  filter: contrast(120%) ;
   &:before{
     content: "";
     position: absolute;
