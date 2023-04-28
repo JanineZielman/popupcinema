@@ -9,7 +9,7 @@ import { Layout } from "../../components/Layout";
 import Moment from 'moment';
 import { Event } from "../../components/Event";
 
-const Category = ({ page, navigation, settings, events }) => {
+const Location = ({ page, navigation, settings, events }) => {
 
   console.log(events)
   return (
@@ -25,8 +25,8 @@ const Category = ({ page, navigation, settings, events }) => {
         </title>
       </Head>
       <div className="container category-page">
+        <h2 className="category page-title">{page.data.title}</h2>
         <div className="content">
-          <h2 className="category page-title">{page.data.title}</h2>
           <SliceZone slices={page.data.slices} components={components} />
         </div>
         <div className="events">
@@ -42,7 +42,7 @@ const Category = ({ page, navigation, settings, events }) => {
   );
 };
 
-export default Category;
+export default Location;
 
 export async function getStaticProps({ params, locale, previewData }) {
   const client = createClient({ previewData });
@@ -56,9 +56,9 @@ export async function getStaticProps({ params, locale, previewData }) {
     fetchLinks: 'location.title category.title'
   });
 
-  const events = allEvents.filter(event => event.data.category.uid == params.uid);
+  const events = allEvents.filter(event => event.data.location.uid == params.uid);
 
-  const page = await client.getByUID("category", params.uid, { 
+  const page = await client.getByUID("location", params.uid, { 
     lang: locale,
     fetchLinks: 'location.title category.title' 
   });
@@ -78,7 +78,7 @@ export async function getStaticProps({ params, locale, previewData }) {
 export async function getStaticPaths() {
   const client = createClient();
 
-  const pages = await client.getAllByType("category", { lang: "*" });
+  const pages = await client.getAllByType("location", { lang: "*" });
 
   return {
     paths: pages.map((page) => {

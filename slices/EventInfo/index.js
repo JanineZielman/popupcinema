@@ -11,7 +11,7 @@ const EventInfo = ({ slice }) => {
     <div className='event-info-block'>
       {slice.items.map((item, i) => {
         return(
-          <div><span>{item.label}</span> <b>{item.value}</b></div>
+          <div key={`eventinfo${i}`}><span>{item.label}</span> <b>{item.value}</b></div>
         )
       })}
     </div>

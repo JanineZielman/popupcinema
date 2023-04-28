@@ -1,0 +1,28 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "rubber"
+  },
+  "title": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "heading1",
+        "content": {
+          "text": "Because"
+        }
+      }
+    ]
+  },
+  "text": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Aliqua ut Lorem sunt occaecat nostrud velit duis labore magna ullamco. Aliquip elit ex ipsum elit nulla est sunt sunt proident nisi cillum."
+        }
+      }
+    ]
+  }
+}

@@ -36,7 +36,8 @@
     },
     "event": {},
     "location": {},
-    "category": {}
+    "category": {},
+    "archive": {}
   },
   "slices": {
     "Text": {

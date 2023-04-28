@@ -81,6 +81,7 @@ h2{
     .menu-link{
       width: fit-content;
       margin: auto;
+      text-transform: lowercase;
       &:hover{
         border-bottom: 1px solid black;
       }
@@ -146,6 +147,7 @@ h2{
   .gradient-content{
     padding: 48px 2vw;
     width: 96vw;
+    margin-left: 2vw;
     display: flex;
     flex-direction: row-reverse;
     align-items: stretch;
@@ -205,6 +207,9 @@ h2{
   margin: auto;
   // padding: 0 2vw;
   margin-top: 48px;
+  h2{
+    text-align: center;
+  }
 }
 
 .embed{
@@ -251,4 +256,24 @@ h2{
     margin-top: 0;
     margin-bottom: -80px;
   }
+}
+
+.archive{
+  margin-top: 85px;
+  .content{
+    margin-bottom: 48px;
+    margin-top: 150px;
+  }
+}
+
+.page-title{
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  top: 60px;
+  background-color: $white;
+  padding-top: 14px;
+  z-index: 2;
+  padding-bottom: 14px;
+  text-transform: lowercase;
 }

@@ -26,6 +26,18 @@ export const linkResolver = (doc) => {
       return `/${doc.uid}`;
     }
   }
+  if (doc.type === "archive") {
+    return "/archive";
+  }
+  if (doc.type === "event") {
+    return `events/${doc.uid}`;
+  }
+  if (doc.type === "location") {
+    return `location/${doc.uid}`;
+  }
+  if (doc.type === "category") {
+    return `category/${doc.uid}`;
+  }
 
   return "/";
 };
