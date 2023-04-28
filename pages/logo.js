@@ -13,7 +13,7 @@ const Logo = ({ settings }) => {
       <div className="loop">
         {settings.data.slices[0].items.map((item, i) => {
           return(
-            <h1>{item.text}</h1>
+            <h1 key={`logo${i}`}>{item.text}</h1>
           )
         })}
         <h1>{settings.data.slices[0].items[0].text}</h1>

@@ -66,7 +66,6 @@
     .list-item a{
       width: 100%;
       position: relative;
-      padding: 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -76,6 +75,7 @@
       align-items: center;
       width: 100%;
       justify-content: space-between;
+      padding: 24px;
     }
   }
 }
