@@ -28,7 +28,7 @@ const Archive = ({ page, news, navigation, settings }) => {
           {news.map((item, i) => {
             return(
               <div className="event-wrapper" key={`list${i}`} >
-               <a href={`/events/${item.uid}`}>
+               <a href={`/news/${item.uid}`}>
                   <div className="content-wrapper"> 
                     <div className={`gradient`}>
                       <div className="gradient-content">

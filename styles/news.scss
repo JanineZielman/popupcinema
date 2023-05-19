@@ -2,16 +2,21 @@
   .events{
     display: flex;
     flex-wrap: wrap;
-    // align-items: stretch;
     justify-content: space-evenly;
     .event-wrapper{
       width: 30vw;
       overflow-y: hidden;
       margin-bottom: 48px;
+      &:hover{
+        img{
+          border-radius: 50%;
+        }
+      }
 
       img{
         width: 100%;
         height: auto;
+        transition: all 0.3s ease;
       }
 
       .content-wrapper{
@@ -50,6 +55,7 @@
         flex-direction: column;
         margin-left: 0;
         justify-content: flex-start;
+        padding: 2vw;
       }
     }
   }

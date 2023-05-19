@@ -252,10 +252,10 @@ h2{
   margin-bottom: 80px;
   padding: 0 2vw;
   h1{
-    max-width: 500px;
-    margin-left: 2vw;
-    margin-top: 0;
-    margin-bottom: -80px;
+    display: block;
+    text-align: center;
+    margin: auto;
+    font-size: 30px;
   }
 }
 
