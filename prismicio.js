@@ -29,6 +29,9 @@ export const linkResolver = (doc) => {
   if (doc.type === "archive") {
     return "/archive";
   }
+  if (doc.type === "news") {
+    return "/news";
+  }
   if (doc.type === "event") {
     return `events/${doc.uid}`;
   }

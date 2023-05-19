@@ -239,6 +239,76 @@ export interface NavigationDocumentDataLinksItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type NavigationDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<NavigationDocumentData>, "navigation", Lang>;
+/** Content for News Item documents */
+interface NewsItemDocumentData {
+    /**
+     * Title field in *News Item*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: news_item.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Date field in *News Item*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: *None*
+     * - **API ID Path**: news_item.date
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    date: prismicT.DateField;
+    /**
+     * Image field in *News Item*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: news_item.image
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+}
+/**
+ * News Item document from Prismic
+ *
+ * - **API ID**: `news_item`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NewsItemDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<NewsItemDocumentData>, "news_item", Lang>;
+/** Content for News documents */
+interface NewsDocumentData {
+    /**
+     * Title field in *News*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: news.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+}
+/**
+ * News document from Prismic
+ *
+ * - **API ID**: `news`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NewsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<NewsDocumentData>, "news", Lang>;
 /** Content for Page documents */
 interface PageDocumentData {
     /**
@@ -330,7 +400,7 @@ type SettingsDocumentDataSlicesSlice = LogoAnimationSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
-export type AllDocumentTypes = ArchiveDocument | CategoryDocument | EventDocument | LocationDocument | NavigationDocument | PageDocument | SettingsDocument;
+export type AllDocumentTypes = ArchiveDocument | CategoryDocument | EventDocument | LocationDocument | NavigationDocument | NewsItemDocument | NewsDocument | PageDocument | SettingsDocument;
 /**
  * Primary content in Embed → Primary
  *
@@ -551,6 +621,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArchiveDocumentData, ArchiveDocument, CategoryDocumentData, CategoryDocumentDataSlicesSlice, CategoryDocument, EventDocumentData, EventDocumentDataSlicesSlice, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocumentDataSlicesSlice, SettingsDocument, AllDocumentTypes, EmbedSliceDefaultPrimary, EmbedSliceDefault, EmbedSliceVariation, EmbedSlice, EventInfoSliceDefaultItem, EventInfoSliceDefault, EventInfoSliceVariation, EventInfoSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, LogoAnimationSliceDefaultItem, LogoAnimationSliceDefault, LogoAnimationSliceVariation, LogoAnimationSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
+        export type { ArchiveDocumentData, ArchiveDocument, CategoryDocumentData, CategoryDocumentDataSlicesSlice, CategoryDocument, EventDocumentData, EventDocumentDataSlicesSlice, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, NewsItemDocumentData, NewsItemDocument, NewsDocumentData, NewsDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocumentDataSlicesSlice, SettingsDocument, AllDocumentTypes, EmbedSliceDefaultPrimary, EmbedSliceDefault, EmbedSliceVariation, EmbedSlice, EventInfoSliceDefaultItem, EventInfoSliceDefault, EventInfoSliceVariation, EventInfoSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, LogoAnimationSliceDefaultItem, LogoAnimationSliceDefault, LogoAnimationSliceVariation, LogoAnimationSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
     }
 }

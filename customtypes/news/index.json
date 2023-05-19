@@ -1,0 +1,26 @@
+{
+  "id": "news",
+  "label": "News",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      }
+    }
+  }
+}

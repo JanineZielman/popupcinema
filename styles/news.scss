@@ -1,0 +1,56 @@
+.news{
+  .events{
+    display: flex;
+    flex-wrap: wrap;
+    // align-items: stretch;
+    justify-content: space-evenly;
+    .event-wrapper{
+      width: 30vw;
+      overflow-y: hidden;
+      margin-bottom: 48px;
+
+      img{
+        width: 100%;
+        height: auto;
+      }
+
+      .content-wrapper{
+        height: 100%;
+        margin-bottom: 0;
+      }
+
+      .location{
+        font-size: 24px;
+      }
+      
+      .title{
+        width: 100%;
+        text-align: left;
+        h1{
+          width: 100%;
+          max-width: 100%;
+          font-size: 42px;
+          margin: 0;
+        }
+      }
+      .date-time{
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        span{
+          margin: 10px 0;
+        }
+      }
+      .gradient{
+        height: 100%;
+      }
+      .gradient-content{
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        margin-left: 0;
+        justify-content: flex-start;
+      }
+    }
+  }
+}

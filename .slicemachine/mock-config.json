@@ -37,7 +37,9 @@
     "event": {},
     "location": {},
     "category": {},
-    "archive": {}
+    "archive": {},
+    "news_item": {},
+    "news": {}
   },
   "slices": {
     "Text": {
