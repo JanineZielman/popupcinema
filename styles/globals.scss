@@ -1,5 +1,10 @@
 @import "colors.scss";
 
+@font-face {
+  font-family: Enriqueta;
+  src: url(Enriqueta-Bold.ttf);
+}
+
 *{
   box-sizing: border-box;
 }
@@ -43,6 +48,7 @@ h1, h2, h3, h4{
 h1{
   font-size: 64px;
   margin: 24px 0;
+  font-family: Enriqueta;
 }
 
 h2{
