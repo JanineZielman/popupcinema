@@ -274,7 +274,23 @@ interface NewsItemDocumentData {
      *
      */
     image: prismicT.ImageField<never>;
+    /**
+     * Slice Zone field in *News Item*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: news_item.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<NewsItemDocumentDataSlicesSlice>;
 }
+/**
+ * Slice for *News Item → Slice Zone*
+ *
+ */
+type NewsItemDocumentDataSlicesSlice = ImageSlice | TextBlockSlice;
 /**
  * News Item document from Prismic
  *
@@ -791,6 +807,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArchiveDocumentData, ArchiveDocument, CategoryDocumentData, CategoryDocumentDataSlicesSlice, CategoryDocument, EventDocumentData, EventDocumentDataSlicesSlice, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, NewsItemDocumentData, NewsItemDocument, NewsDocumentData, NewsDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocumentDataSlicesSlice, SettingsDocument, AllDocumentTypes, EmbedSliceDefaultPrimary, EmbedSliceDefault, EmbedSliceVariation, EmbedSlice, EventInfoSliceDefaultItem, EventInfoSliceDefault, EventInfoSliceVariation, EventInfoSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, ImageTextSliceDefaultPrimary, ImageTextSliceDefaultItem, ImageTextSliceDefault, ImageTextSliceVariation, ImageTextSlice, LogoAnimationSliceDefaultItem, LogoAnimationSliceDefault, LogoAnimationSliceVariation, LogoAnimationSlice, PartnersSliceDefaultPrimary, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
+        export type { ArchiveDocumentData, ArchiveDocument, CategoryDocumentData, CategoryDocumentDataSlicesSlice, CategoryDocument, EventDocumentData, EventDocumentDataSlicesSlice, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, NewsItemDocumentData, NewsItemDocumentDataSlicesSlice, NewsItemDocument, NewsDocumentData, NewsDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocumentDataSlicesSlice, SettingsDocument, AllDocumentTypes, EmbedSliceDefaultPrimary, EmbedSliceDefault, EmbedSliceVariation, EmbedSlice, EventInfoSliceDefaultItem, EventInfoSliceDefault, EventInfoSliceVariation, EventInfoSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, ImageTextSliceDefaultPrimary, ImageTextSliceDefaultItem, ImageTextSliceDefault, ImageTextSliceVariation, ImageTextSlice, LogoAnimationSliceDefaultItem, LogoAnimationSliceDefault, LogoAnimationSliceVariation, LogoAnimationSlice, PartnersSliceDefaultPrimary, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
     }
 }

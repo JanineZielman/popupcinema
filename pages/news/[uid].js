@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { PrismicLink, SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
+import { PrismicNextImage } from "@prismicio/next";
 
 import { createClient } from "../../prismicio";
 import { components } from "../../slices";
@@ -25,22 +26,28 @@ const Event = ({ page, navigation, settings }) => {
           {prismicH.asText(settings.data.siteTitle)}
         </title>
       </Head>
-      <div className="container event-page">
+      <div className="container event-page news-page">
         <div className={`event-wrapper even-${even}`}>
           <div className={`gradient`}>
             <div className="content-wrapper">
               <div className="gradient-content">
-                <div className="title">
-                  <h1>{prismicH.asText(page.data.title)}</h1>
-                </div>
-                <div className="info-wrapper">
-                  <div className="date-time">
-                    {page.data.date &&<span>{Moment(page.data.date).format("DD.MM.Y")}</span>}
+                <div className="news-page-wrapper">
+                  <div className="flex">
+                    <div className="date-time">
+                      {page.data.date &&<span>{Moment(page.data.date).format("DD.MM.Y")}</span>}
+                    </div>
+                    <div className="title">
+                      <h1>{prismicH.asText(page.data.title)}</h1>
+                    </div>
+                  </div>
+                  <div className="image">
+                    <PrismicNextImage field={page.data.image} alt="logo"/>
+                  </div>
+              
+                  <div className="content">
+                    <SliceZone slices={page.data.slices} components={components} />
                   </div>
                 </div>
-              </div>
-              <div className="content">
-                <SliceZone slices={page.data.slices} components={components} />
               </div>
             </div>
           </div>
