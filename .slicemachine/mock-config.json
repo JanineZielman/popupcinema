@@ -95,6 +95,18 @@
       "default": {
         "primary": {}
       }
+    },
+    "ImageText": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
+    },
+    "Partners": {
+      "default": {
+        "primary": {},
+        "items": {}
+      }
     }
   }
 }

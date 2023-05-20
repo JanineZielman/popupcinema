@@ -3,14 +3,18 @@
 import Embed from './Embed';
 import EventInfo from './EventInfo';
 import Image from './Image';
+import ImageText from './ImageText';
 import LogoAnimation from './LogoAnimation';
+import Partners from './Partners';
 import TextBlock from './TextBlock';
 
 export {
 	Embed,
 	EventInfo,
 	Image,
+	ImageText,
 	LogoAnimation,
+	Partners,
 	TextBlock,
 };
 
@@ -18,6 +22,8 @@ export const components = {
 	embed: Embed,
 	event_info: EventInfo,
 	image: Image,
+	image_text: ImageText,
 	logo_animation: LogoAnimation,
+	partners: Partners,
 	text_block: TextBlock,
 };

@@ -31,6 +31,12 @@
             },
             "image": {
               "type": "SharedSlice"
+            },
+            "image_text": {
+              "type": "SharedSlice"
+            },
+            "partners": {
+              "type": "SharedSlice"
             }
           }
         }

@@ -10,9 +10,14 @@ body,html{
   margin: 0;
   padding: 0;
 }
+
 body{
   font-family: "new-hero", sans-serif;
   background-color: $white;
+}
+
+section{
+  padding-bottom: 50px;
 }
 
 a{
@@ -240,6 +245,75 @@ h2{
     width: 100%;
     height: 100%;
     object-fit: contain;
+  }
+}
+
+.image-text{
+  max-width: 900px;
+  display: block;
+  margin: auto;
+  margin-top: 48px;
+  text-align: center;
+  h2{
+    text-align: center;
+  }
+  .items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 24px;
+    .item{
+      width: 30%;
+      margin-top: 14px;
+      img{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      h3{
+        text-align: center;
+        margin-bottom: 0;
+      }
+      p{
+        text-align: center;
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+.partners{
+  max-width: 900px;
+  display: block;
+  margin: auto;
+  margin-top: 48px;
+  text-align: center;
+  h2{
+    text-align: center;
+  }
+  .items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 24px;
+    .item{
+      width: auto;
+      margin-top: 14px;
+      img{
+        width: auto;
+        height: 100px;
+      }
+      h3{
+        text-align: center;
+        margin-bottom: 0;
+      }
+      p{
+        text-align: center;
+        margin: 5px 0;
+      }
+    }
   }
 }
 
