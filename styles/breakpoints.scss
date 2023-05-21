@@ -2,6 +2,9 @@
   h1{
     font-size: 48px;
   }
+  h2{
+    font-size: 24px;
+  }
   .event-wrapper{
     .date-time{
       flex-direction: column;
@@ -81,4 +84,23 @@
   .flex{
     flex-direction: column;
   }
+  .partners{
+    .items{
+      .item{
+        img{
+          height: 45px;
+        }
+      }
+    }
+  }
+  .image-text {
+    .items{
+      .item{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+  
 }

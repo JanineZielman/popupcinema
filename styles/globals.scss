@@ -49,6 +49,11 @@ h1{
   font-size: 64px;
   margin: 24px 0;
   font-family: Enriqueta;
+  line-height: 1.1;
+}
+
+.page h1{
+  font-family: "new-hero", sans-serif;
 }
 
 h2{
@@ -128,6 +133,9 @@ h2{
 
 .events{
   width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .event-wrapper.even-false{
@@ -146,6 +154,10 @@ h2{
     margin-left: auto;
     justify-content: flex-end;
   }
+}
+
+.gradient{
+  border-radius: 10px;
 }
 
 .event-wrapper{

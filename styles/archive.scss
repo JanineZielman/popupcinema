@@ -3,18 +3,20 @@
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    width: 95%;
-    margin-left: 2.5%;
+    // width: 95%;
+    // margin-left: 2.5%;
     justify-content: space-between;
     position: relative;
     .event-wrapper{
-      width: 30vw;
+      width: 30%;
       overflow-y: hidden;
       margin-bottom: 48px;
+      border-radius: 10px;
 
       .content-wrapper{
         height: 100%;
         margin-bottom: 0;
+        
       }
 
       .location{
@@ -47,6 +49,7 @@
         margin-left: 0;
         justify-content: space-between;
         padding-top: 0;
+        border-radius: 10px;
       }
     }
   }
