@@ -52,9 +52,11 @@ h1{
   line-height: 1.1;
 }
 
-.page h1{
+.page h1, .logo-animation h1{
   font-family: "new-hero", sans-serif;
 }
+
+
 
 h2{
   font-size: 30px;
@@ -388,6 +390,9 @@ h2{
   
   .loop h1{
     font-weight: 400;
+    font-size: 54px;
+    white-space: nowrap;
+    line-height: 1.4;
   }
   
   
