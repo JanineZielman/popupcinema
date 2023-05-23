@@ -5,8 +5,10 @@ import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../prismicio";
 import { components } from "../slices";
 import { Layout } from "../components/Layout";
+import Moment from 'moment';
 
 const Page = ({ page, navigation, settings }) => {
+  const d = new Date();
   return (
     <Layout
       alternateLanguages={page.alternate_languages}
@@ -19,7 +21,7 @@ const Page = ({ page, navigation, settings }) => {
         </title>
       </Head>
       <h2 className="page-title">{prismicH.asText(page.data.title)}</h2>
-      <div className="container page gradient">
+      <div className={`container page gradient ${Moment(d).format("MMM").toLowerCase()}1 ${Moment(d).format("MMM").toLowerCase()}2 `}>
         <SliceZone slices={page.data.slices} components={components} />
       </div>
     </Layout>

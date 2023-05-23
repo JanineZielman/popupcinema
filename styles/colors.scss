@@ -7,13 +7,20 @@ $lavender: #6970DD;
 $green: #24886c;
 $white: #ededed;
 
+.event-page{
+  .gradient{
+    background-image: none;
+  }
+}
+
 .gradient{
-  background-size: cover;
-  background-image: url(blue.png);
+  background-size: contain;
+  background-image: url(Scan-8.png);
   filter: contrast(120%) ;
-  // mask-image: url(witte-puntjes.png);
-  // mask-size: 500px;
+  // mask-image: url(witte-puntjes-9.png);
+  // mask-size: contain;
   // mask-repeat: repeat;
+  border-radius: 10px;
   &:before{
     content: "";
     position: absolute;
@@ -22,9 +29,7 @@ $white: #ededed;
     z-index: -1;
     top: 0;
     left: 0;
-    // mask-image: url(witte-puntjes.png);
-    // mask-size: 300px;
-    // mask-repeat: repeat;
+    border-radius: 10px;
   }
   &:after{
     content: "";
@@ -34,16 +39,17 @@ $white: #ededed;
     z-index: -2;
     top: 0;
     left: 0;
-    // mask-image: url(witte-puntjes.png);
-    // mask-size: 00px;
-    // mask-repeat: repeat;
+    mask-image: url(Scan-6-black.png);
+    mask-size: 1px;
+    mask-repeat: repeat;
+    border-radius: 10px;
   }
   &.spruit-cinema{
     &:before{
-      background: radial-gradient(circle, $green 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%);
+      background: radial-gradient(circle, $green 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
     }
     &:after{
-      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $yellow 30%, $yellow 50%, $yellow 70%, rgba(255,255,255,0) 100%);
+      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $yellow 35%, $yellow 50%, $yellow 65%, rgba(255,255,255,0) 100%);
     }
   }
 }
@@ -51,45 +57,49 @@ $white: #ededed;
 //orange
 .may1, .jun1, .jul1, .aug1{
   &:before{
-    background: radial-gradient(circle, $orange 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%);
+    background: radial-gradient(circle, $orange 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
     // background-image: radial-gradient(circle, $orange 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%);
   }
 }
 //purple
 .mar1, .apr1, .sep1, .oct1{
   &:before{
-    background: radial-gradient(circle, $purple 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%);
+    background: radial-gradient(circle, $purple 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
   }
 }
 //blue
-.jan1, .feb1, .nov1, .dev1{
+.jan1, .feb1, .nov1, .dec1{
   &:before{
-    background: radial-gradient(circle, $blue 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%);
+    background: radial-gradient(circle, $blue 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
   }
 }
 
 //yellow
 .may2, .mar2, .jan2{
   &:after{
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $yellow 35%, $yellow 50%, $yellow 65%, rgba(255,255,255,0) 100%);
+    background-color: $yellow;
+    // background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $yellow 35%, $yellow 50%, $yellow 65%, rgba(255,255,255,0) 100%);
   }
 }
 //orange
 .jun2, .apr2, .feb2{
   &:after{
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $orange 35%, $orange 50%, $orange 65%, rgba(255,255,255,0) 100%);
+    background-color: $orange;
+    // background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $orange 35%, $orange 50%, $orange 65%, rgba(255,255,255,0) 100%);
   }
 }
 //pink
 .jul2, .sep2, .nov2{
   &:after{
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $pink 35%, $pink 50%, $pink 65%, rgba(255,255,255,0) 100%);
+    background-color: $pink;
+    // background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $pink 35%, $pink 50%, $pink 65%, rgba(255,255,255,0) 100%);
   }
 }
 //lavender
 .aug2, .okt2, .dec2{
   &:after{
-    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $lavender 35%, $lavender 50%, $lavender 65%, rgba(255,255,255,0) 100%);
+    background-color: $lavender;
+    // background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $lavender 35%, $lavender 50%, $lavender 65%, rgba(255,255,255,0) 100%);
   }
 }
 

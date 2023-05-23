@@ -30,7 +30,7 @@ const Archive = ({ page, news, navigation, settings }) => {
               <div className="event-wrapper" key={`list${i}`} >
                <a href={`/news/${item.uid}`}>
                   <div className="content-wrapper"> 
-                    <div className={`gradient`}>
+                    <div className={`gradient ${Moment(item.data.date).format("MMM").toLowerCase()}1 ${Moment(item.data.date).format("MMM").toLowerCase()}2`}>
                       <div className="gradient-content">
                         <img src={item.data.image.url}/>
                         <div className="date-time" suppressHydrationWarning>
