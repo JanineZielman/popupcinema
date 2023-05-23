@@ -445,12 +445,33 @@ h2{
 
 // background generator
 .background-generator{
+  overflow: visible;
   .gradient{
     min-height: 100vh;
+    // width: 200%;
     background-image: none;
-    // &:after{
-    //   mask-size: 0.1px;
+    // &:before{
+    //   width: 200%;
     // }
+  }
+  //orange
+  .may1, .jun1, .jul1, .aug1{
+    &:before{
+      background: radial-gradient(circle, $orange 0%, rgba(255,255,255,0) 100%, rgba(255,255,255,0) 100%);
+      // background-image: radial-gradient(circle, $orange 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 100%);
+    }
+  }
+  //purple
+  .mar1, .apr1, .sep1, .oct1{
+    &:before{
+      background: radial-gradient(circle, $purple 0%, rgba(255,255,255,0) 100%, rgba(255,255,255,0) 100%);
+    }
+  }
+  //blue
+  .jan1, .feb1, .nov1, .dec1{
+    &:before{
+      background: radial-gradient(circle, $blue 0%, rgba(255,255,255,0) 100%, rgba(255,255,255,0) 100%);
+    }
   }
   .settings{
     display: flex;
