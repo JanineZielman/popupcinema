@@ -18,8 +18,8 @@ const Page = ({ page, navigation, settings }) => {
           {prismicH.asText(page.data.title)} | {prismicH.asText(settings.data.siteTitle)}
         </title>
       </Head>
-      <div className="container page">
-        <h1>{prismicH.asText(page.data.title)}</h1>
+      <h2 className="page-title">{prismicH.asText(page.data.title)}</h2>
+      <div className="container page gradient">
         <SliceZone slices={page.data.slices} components={components} />
       </div>
     </Layout>

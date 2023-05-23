@@ -9,7 +9,18 @@
           {
             "type": "heading2",
             "content": {
-              "text": "Could"
+              "text": "Trouble"
+            }
+          }
+        ]
+      },
+      "quote": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Nostrud qui ea deserunt. Ea ut duis anim magna eiusmod. Incididunt et aliqua incididunt."
             }
           }
         ]
@@ -20,7 +31,7 @@
           {
             "type": "paragraph",
             "content": {
-              "text": "Aliquip excepteur pariatur adipisicing aute veniam tempor consectetur dolor aute nisi proident et."
+              "text": "Consectetur qui officia magna aliquip elit dolor voluptate duis qui. Esse laboris voluptate sunt laboris commodo nisi."
             }
           }
         ]

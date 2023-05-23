@@ -19,8 +19,8 @@ const Archive = ({ page, news, navigation, settings }) => {
       <Head>
         <title>{prismicH.asText(settings.data.siteTitle)}</title>
       </Head>
+      <h2 className="page-title">{prismicH.asText(page.data.title)}</h2>
       <div className="container news">
-        <h2 className="page-title">{prismicH.asText(page.data.title)}</h2>
         <div className="content text-block">
           <PrismicRichText field={page.data.text}/>
         </div>
@@ -63,7 +63,7 @@ export async function getStaticProps({ locale, previewData }) {
     lang: locale,
     orderings: {
 			field: 'my.news_item.date',
-			direction: 'asc',
+			direction: 'desc',
 		}
   });
   const navigation = await client.getSingle("navigation", { lang: locale });

@@ -6,10 +6,9 @@ import { createClient } from "../../prismicio";
 import { components } from "../../slices";
 import { Layout } from "../../components/Layout";
 import { Event } from "../../components/Event";
+import { ArchiveItems } from "../../components/ArchiveItems";
 
 const Location = ({ page, navigation, settings, events }) => {
-
-
   console.log(events)
   return (
     <Layout
@@ -44,18 +43,7 @@ const Location = ({ page, navigation, settings, events }) => {
           <div className="text-block">
             <h2>Archive</h2>
           </div>
-          <div className="events">
-            {events.map((item, i) => {
-              const even = (i % 2 == 0);
-              return(
-                <>
-                  {new Date(item.data.date).getTime() < new Date().getTime() &&
-                    <Event item={item} even={even} i={i} key={`eventwrap${i}`} location={false}/>
-                  }
-                </>
-              )
-            })}
-          </div>
+          <ArchiveItems events={events}/>
         </div>
       </div>
     </Layout>

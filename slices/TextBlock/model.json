@@ -20,6 +20,15 @@
             "single": "heading2"
           }
         },
+        "quote": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Quote",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
         "text": {
           "type": "StructuredText",
           "config": {

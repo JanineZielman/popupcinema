@@ -13,6 +13,11 @@ const TextBlock = ({ slice }) => (
         <PrismicRichText field={slice.primary.title}/>
       }
     </div>
+    <div className='quote'>
+      {slice.primary.quote &&
+        <PrismicRichText field={slice.primary.quote}/>
+      }
+    </div>
     <div className='text'>
       {slice.primary.text &&
         <PrismicRichText field={slice.primary.text}/>

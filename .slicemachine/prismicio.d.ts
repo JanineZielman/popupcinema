@@ -769,6 +769,16 @@ interface TextBlockSliceDefaultPrimary {
      */
     title: prismicT.TitleField;
     /**
+     * Quote field in *TextBlock → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_block.primary.quote
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    quote: prismicT.RichTextField;
+    /**
      * Text field in *TextBlock → Primary*
      *
      * - **Field Type**: Rich Text

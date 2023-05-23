@@ -11,6 +11,9 @@ $white: #ededed;
   background-size: cover;
   background-image: url(blue.png);
   filter: contrast(120%) ;
+  // mask-image: url(witte-puntjes.png);
+  // mask-size: 500px;
+  // mask-repeat: repeat;
   &:before{
     content: "";
     position: absolute;
@@ -19,6 +22,9 @@ $white: #ededed;
     z-index: -1;
     top: 0;
     left: 0;
+    // mask-image: url(witte-puntjes.png);
+    // mask-size: 300px;
+    // mask-repeat: repeat;
   }
   &:after{
     content: "";
@@ -28,6 +34,9 @@ $white: #ededed;
     z-index: -2;
     top: 0;
     left: 0;
+    // mask-image: url(witte-puntjes.png);
+    // mask-size: 00px;
+    // mask-repeat: repeat;
   }
   &.spruit-cinema{
     &:before{
