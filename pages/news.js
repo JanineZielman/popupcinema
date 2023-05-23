@@ -21,9 +21,6 @@ const Archive = ({ page, news, navigation, settings }) => {
       </Head>
       <h2 className="page-title">{prismicH.asText(page.data.title)}</h2>
       <div className="container news">
-        <div className="content text-block">
-          <PrismicRichText field={page.data.text}/>
-        </div>
         <div className="events">
           {news.map((item, i) => {
             return(

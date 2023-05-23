@@ -5,6 +5,15 @@
   h2{
     font-size: 24px;
   }
+  .page{
+    padding-top: 100px;
+  }
+  .news{
+    margin-top: 0;
+  }
+  .news .events .event-wrapper .gradient-content{
+    padding: 14px;
+  }
   .event-wrapper{
     .date-time{
       flex-direction: column;
@@ -75,8 +84,8 @@
       width: 100%;
       margin: 0;
       .event-wrapper{
-        width: 100%;
-        margin: 14px 0;
+        width: 90%;
+        margin: 14px auto;
         overflow-x: hidden;
       }
     }
@@ -86,8 +95,13 @@
   }
   .partners{
     .items{
+      flex-direction: column;
       .item{
+        width: 100%;
+        margin: 12px auto;
         img{
+          margin: auto;
+          width: auto;
           height: 45px;
         }
       }
