@@ -21,7 +21,7 @@ const Background = () => {
   
 
   return (
-    <div className="background-generator">
+    <div className={`background-generator ${date.slice(0, 3).toLowerCase()}2`}>
       <div className="settings">
         <div className="options">
           <div>
@@ -37,7 +37,7 @@ const Background = () => {
           Print
         </div>
       </div>
-      <div className={`gradient ${date.slice(0, 3).toLowerCase()}1 ${date.slice(0, 3).toLowerCase()}2 time${time.slice(0, 2)}`}>
+      <div className={`gradient ${date.slice(0, 3).toLowerCase()}1 time${time.slice(0, 2)}`}>
         <div className="gradient-content">
         </div>
       </div>
