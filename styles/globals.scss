@@ -473,19 +473,26 @@ h2{
   }
   //yellow
   &.may2, &.mar2, &.jan2{
-    background-color: $yellow;
+    // background-color: $yellow;
+    background-color: rgba(240, 248, 202, 0.8);
   }
   //orange
   &.jun2, &.apr2, &.feb2{
-    background-color: $orange;
+    // background-color: $orange;
+    background-color: rgba(240, 168, 27, 0.8);
+  }
+  &.jun2{
+    background-color: rgba(240, 168, 27, 0.4);
   }
   //pink
   &.jul2, &.sep2, &.nov2{
-    background-color: $pink;
+    background-color: rgba(223, 135, 225, 0.8);
+    // background-color: $pink;
   }
   //lavender
   &.aug2, &.okt2, &.dec2{
-    background-color: $lavender;
+    // background-color: $lavender;
+    background-color: rgba(105, 112, 221, 0.8);
   }
   .settings{
     display: flex;
