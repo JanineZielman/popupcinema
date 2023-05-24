@@ -1,10 +1,5 @@
 @import "colors.scss";
 
-@font-face {
-  font-family: Enriqueta;
-  src: url(Enriqueta-Regular.ttf);
-}
-
 *{
   box-sizing: border-box;
 }
@@ -53,7 +48,7 @@ h1, h2, h3, h4{
 h1{
   font-size: 64px;
   margin: 24px 0;
-  font-family: Enriqueta;
+  font-family: "loretta-display";
   line-height: 1.1;
 }
 
@@ -196,7 +191,7 @@ h2{
     width: 50%;
     h1{
       max-width: 700px;
-      font-weight: 600;
+      font-weight: 500;
     }
   }
   .info-wrapper{
@@ -246,7 +241,8 @@ h2{
     font-size: 36px;
     display: block;
     margin-bottom: 14px;
-    font-family: Enriqueta;
+    font-family: "loretta-display";
+    font-weight: 500;
   }
 }
 
@@ -376,7 +372,7 @@ h2{
     font-size: 30px;
   }
   h2{
-    font-family: Enriqueta;
+    font-family: "loretta-display";
   }
 }
 
