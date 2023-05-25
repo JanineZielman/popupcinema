@@ -5,6 +5,11 @@
   h2{
     font-size: 24px;
   }
+  section{
+    h2{
+      margin-top: 24px;
+    }
+  }
   .page{
     padding-top: 100px;
   }
@@ -48,7 +53,7 @@
       margin-bottom: 10px;
     }
     .gradient-content{
-      padding-top: 0;
+      // padding-top: 0;
       width: 100%;
     }
     .event-wrapper{
@@ -79,6 +84,10 @@
     }
   }
   .archive, .news{
+    .content{
+      padding-left: 2vw;
+      padding-right: 2vw;
+    }
     .events{
       flex-direction: column;
       width: 100%;
@@ -89,6 +98,10 @@
         overflow-x: hidden;
       }
     }
+  }
+  .archive .list .gradient-content{
+    flex-direction: column;
+    align-items: start;
   }
   .flex{
     flex-direction: column;
