@@ -401,6 +401,11 @@ h2{
 
 // logo animation
 
+.logo-page{
+  width: 100vw;
+  height: 100vh;
+}
+
 .logo-animation{
   font-family: "new-hero", sans-serif;
   position: absolute;
@@ -410,6 +415,12 @@ h2{
   text-align: center;
   h1{
     font-family: "new-hero", sans-serif;
+  }
+  .logo-ani{
+    width: 100%;
+    height: auto;
+    mask-repeat: no-repeat;
+    margin: auto;
   }
   .loop{
     height: 95px;

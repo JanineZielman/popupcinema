@@ -10,7 +10,22 @@
       "docURL": "...",
       "version": "sktwi1xtmkfgx8626",
       "description": "LogoAnimation",
-      "primary": {},
+      "primary": {
+        "background_color": {
+          "type": "Color",
+          "config": {
+            "label": "Background Color",
+            "placeholder": ""
+          }
+        },
+        "text_color": {
+          "type": "Color",
+          "config": {
+            "label": "Text Color",
+            "placeholder": ""
+          }
+        }
+      },
       "items": {
         "text": {
           "type": "Text",
