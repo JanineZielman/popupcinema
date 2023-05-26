@@ -6,7 +6,6 @@ import { Layout } from "../components/Layout";
 import { Event } from "../components/Event";
 
 const Index = ({ events, navigation, settings }) => {
-  console.log(events)
 
   return (
     <Layout

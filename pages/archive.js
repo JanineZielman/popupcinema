@@ -8,7 +8,6 @@ import { PrismicRichText } from "@prismicio/react";
 import { ArchiveItems } from "../components/ArchiveItems"; 
 
 const Archive = ({ page, events, navigation, settings }) => {
-  console.log(events)
 
   return (
     <Layout

@@ -12,7 +12,6 @@ const Event = ({ page, navigation, settings }) => {
   const router = useRouter()
   const even = router.query.even;
 
-  console.log(page)
   return (
     <Layout
       alternateLanguages={page.alternate_languages}

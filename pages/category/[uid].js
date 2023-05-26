@@ -9,8 +9,6 @@ import { Event } from "../../components/Event";
 import { ArchiveItems } from "../../components/ArchiveItems";
 
 const Category = ({ page, navigation, settings, events }) => {
-
-  console.log(events)
   return (
     <Layout
       alternateLanguages={page.alternate_languages}

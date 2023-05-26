@@ -2,7 +2,6 @@ import { createClient } from "../prismicio";
 import * as prismicH from "@prismicio/helpers";
 
 const Logo = ({ settings }) => {
-  console.log(settings)
   return (
     <div className="logo-page" style={{backgroundColor: settings.data.slices[0].primary.background_color}}>
       <div className="logo-animation" id="capture">

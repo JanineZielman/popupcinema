@@ -8,7 +8,6 @@ import { PrismicRichText } from "@prismicio/react";
 import Moment from "moment";
 
 const Archive = ({ page, news, navigation, settings }) => {
-  console.log(news)
 
   return (
     <Layout
