@@ -33,7 +33,6 @@
           [
             "image",
             {
-              "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
                 "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
@@ -51,6 +50,9 @@
                 },
                 "background": "transparent"
               },
+              "credits": null,
+              "alt": null,
+              "__TYPE__": "ImageContent",
               "thumbnails": {}
             }
           ],
@@ -76,7 +78,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Eu sint nisi ullamco voluptate aute dolore. Veniam sit ut aute velit non anim nisi."
+                    "text": "Tempor incididunt consectetur consequat in consectetur veniam aliquip nisi nostrud. Esse id id ipsum. Est dolor do sint esse ullamco exercitation velit."
                   }
                 }
               ]

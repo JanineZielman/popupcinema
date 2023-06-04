@@ -107,6 +107,11 @@
         "primary": {},
         "items": {}
       }
+    },
+    "SocialMedia": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }

@@ -29,6 +29,9 @@
           "choices": {
             "logo_animation": {
               "type": "SharedSlice"
+            },
+            "social_media": {
+              "type": "SharedSlice"
             }
           }
         }

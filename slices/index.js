@@ -6,6 +6,7 @@ import Image from './Image';
 import ImageText from './ImageText';
 import LogoAnimation from './LogoAnimation';
 import Partners from './Partners';
+import SocialMedia from './SocialMedia';
 import TextBlock from './TextBlock';
 
 export {
@@ -15,6 +16,7 @@ export {
 	ImageText,
 	LogoAnimation,
 	Partners,
+	SocialMedia,
 	TextBlock,
 };
 
@@ -25,5 +27,6 @@ export const components = {
 	image_text: ImageText,
 	logo_animation: LogoAnimation,
 	partners: Partners,
+	social_media: SocialMedia,
 	text_block: TextBlock,
 };

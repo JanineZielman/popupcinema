@@ -5,7 +5,7 @@
       {
         "type": "heading1",
         "content": {
-          "text": "Audience"
+          "text": "Burst"
         }
       }
     ]
@@ -14,13 +14,13 @@
     "__TYPE__": "ImageContent",
     "origin": {
       "id": "main",
-      "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-      "width": 3882,
-      "height": 2584
+      "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
+      "width": 6000,
+      "height": 4000
     },
-    "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-    "width": 3882,
-    "height": 2584,
+    "url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
+    "width": 6000,
+    "height": 4000,
     "edit": {
       "zoom": 1,
       "crop": {
@@ -35,8 +35,43 @@
     "__TYPE__": "SliceContentType",
     "value": [
       {
-        "key": "logo_animation$47537f46-42ff-4e8f-8723-cd50cce873b2",
+        "key": "logo_animation$457debde-de09-4cba-8541-f52a78cddc10",
         "name": "logo_animation",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "background_color": {
+              "__TYPE__": "FieldContent",
+              "value": "#00d549",
+              "type": "Color"
+            },
+            "text_color": {
+              "__TYPE__": "FieldContent",
+              "value": "#928485",
+              "type": "Color"
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": [
+                [
+                  "text",
+                  {
+                    "__TYPE__": "FieldContent",
+                    "value": "central",
+                    "type": "Text"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "key": "social_media$8e7de253-5ba4-44ba-b1d4-c3316a164365",
+        "name": "social_media",
         "widget": {
           "__TYPE__": "SharedSliceContent",
           "variation": "default",
@@ -46,11 +81,37 @@
               "__TYPE__": "GroupItemContent",
               "value": [
                 [
-                  "text",
+                  "icon",
                   {
-                    "__TYPE__": "FieldContent",
-                    "value": "our",
-                    "type": "Text"
+                    "__TYPE__": "ImageContent",
+                    "origin": {
+                      "id": "main",
+                      "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+                      "width": 3456,
+                      "height": 4320
+                    },
+                    "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+                    "width": 3456,
+                    "height": 4320,
+                    "edit": {
+                      "zoom": 1,
+                      "crop": {
+                        "x": 0,
+                        "y": 0
+                      },
+                      "background": "transparent"
+                    },
+                    "thumbnails": {}
+                  }
+                ],
+                [
+                  "link",
+                  {
+                    "__TYPE__": "LinkContent",
+                    "value": {
+                      "__TYPE__": "ExternalLink",
+                      "url": "http://twitter.com"
+                    }
                   }
                 ]
               ]
