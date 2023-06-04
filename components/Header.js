@@ -1,6 +1,7 @@
 import * as prismicH from "@prismicio/helpers";
 import { PrismicLink, PrismicText } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
+import Link from "next/link";
 
 import { linkResolver } from "../prismicio";
 
@@ -14,11 +15,12 @@ export const Header = ({ alternateLanguages = [], navigation, settings }) => {
   return (
     <header>
       <div className="navigation">
-        <div className="logo" onClick={toggleMenu}>
+        <Link className="logo" href="/">
           {prismicH.isFilled.image(settings.data.logo) && (
             <PrismicNextImage field={settings.data.logo} alt="logo"/>
           )}
-        </div>
+        </Link>
+        <img className="menu-icon" onClick={toggleMenu} src="/menu.svg"/>
         <nav id="navItems">
           {navigation.data?.links.map((item) => (
             <div
@@ -30,6 +32,15 @@ export const Header = ({ alternateLanguages = [], navigation, settings }) => {
               </PrismicLink>
             </div>
           ))}
+          <div className="lang-switcher">
+            {alternateLanguages.map((lang) => (
+              <div key={lang.lang} className="lang">
+                <PrismicLink href={linkResolver(lang)} locale={lang.lang}>
+                  <span>{lang.lang.slice(0,2)}</span>
+                </PrismicLink>
+              </div>
+            ))}
+          </div>
         </nav>
       </div>
       <div className="lang-switcher">

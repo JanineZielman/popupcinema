@@ -75,6 +75,21 @@ h2{
   }
 }
 
+.menu-icon{
+  width: 40px;
+  height: auto;
+  position: fixed;
+  top: 20px;
+  right: 14px;
+  display: none;
+}
+
+#navItems{
+  .lang-switcher{
+    display: none;
+  }
+}
+
 .navigation{
   display: flex;
   justify-content: center;

@@ -67,8 +67,11 @@
       font-size: 24px;
     }
     .date-time{
+      display: flex;
+      flex-wrap: wrap;
       span{
         margin-right: 24px;
+        display: block;
       }
     }
     .content-wrapper{
@@ -87,6 +90,15 @@
       width: 100%;
       justify-content: space-between;
       padding: 24px;
+    }
+    .location{
+      width: 20%;
+    }
+    .title{
+      width: 40%;
+    }
+    .info-wrapper{
+      width: 35%;
     }
   }
 }
