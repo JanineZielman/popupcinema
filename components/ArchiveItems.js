@@ -6,7 +6,7 @@ export const ArchiveItems = ({events}) => {
     <div className="list">
       {events.map((item, i) => {
         return(
-          <div className="list-item" key={`list${i}`} >
+          <div className={`list-item`} key={`list${i}`} >
             <a href={`/events/${item.uid}`}>
               <div className="content-wrapper">
                 <div className={`gradient ${Moment(item.data.date).format("MMM").toLowerCase()}1 ${Moment(item.data.date).format("MMM").toLowerCase()}2 ${item.data.category.slug && item.data.category.slug} time${item.data.time?.slice(0, 2)}`}>
