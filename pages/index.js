@@ -21,9 +21,9 @@ const Index = ({ events, navigation, settings }) => {
           const even = (i % 2 == 0);
           return(
             <>
-              {/* {new Date(item.data.date).getTime() >= new Date().getTime() && */}
+              {new Date(item.data.date).getTime() >= new Date().getTime() &&
                 <Event item={item} even={even} i={i} key={`event${i}`} location={true}/>
-              {/* } */}
+              } 
             </>
           )
         })}

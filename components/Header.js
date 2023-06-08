@@ -15,6 +15,15 @@ export const Header = ({ alternateLanguages = [], navigation, settings }) => {
   return (
     <header>
       <div className="navigation">
+        <div className="socials">
+          {settings.data.slices?.[1]?.items?.map((item, i) => {
+            return(
+              <PrismicLink field={item.link} key={`socials${i}`}>
+                <PrismicNextImage field={item.icon}/>
+              </PrismicLink>
+            )
+          })}
+        </div>
         <Link className="logo" href="/">
           {prismicH.isFilled.image(settings.data.logo) && (
             <PrismicNextImage field={settings.data.logo} alt="logo"/>
@@ -32,6 +41,15 @@ export const Header = ({ alternateLanguages = [], navigation, settings }) => {
               </PrismicLink>
             </div>
           ))}
+          <div className="socials">
+            {settings.data.slices?.[1]?.items?.map((item, i) => {
+              return(
+                <PrismicLink field={item.link} key={`socialsmob${i}`}>
+                  <PrismicNextImage field={item.icon}/>
+                </PrismicLink>
+              )
+            })}
+          </div>
           <div className="lang-switcher">
             {alternateLanguages.map((lang) => (
               <div key={lang.lang} className="lang">

@@ -11,7 +11,7 @@
       margin-top: 48px;
     }
   }
-  .lang-switcher{
+  .lang-switcher, .socials{
     display: none;
   }
   .navigation{
@@ -36,6 +36,10 @@
       margin: auto;
       width: 90%;
       text-align: right;
+    }
+    .socials{
+      display: flex;
+      margin-top: 5px;
     }
   }  
   .menu-icon{

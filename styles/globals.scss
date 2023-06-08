@@ -85,7 +85,7 @@ h2{
 }
 
 #navItems{
-  .lang-switcher{
+  .lang-switcher, .socials{
     display: none;
   }
 }
@@ -122,6 +122,21 @@ h2{
   }
 }
 
+.socials{
+  display: flex;
+  position: fixed;
+  left: 2vw;
+  a{
+    width: 20px;
+    height: auto;
+    margin-right: 5px;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
 #navItems{
   position: absolute;
   top: -150px;
@@ -134,7 +149,7 @@ h2{
 
 .lang-switcher{
   position: fixed;
-  top: 14px;
+  top: 20px;
   right: 2vw;
   z-index: 999;
   &:hover{
