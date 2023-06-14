@@ -154,7 +154,7 @@ interface EventDocumentData {
  * Slice for *Event → Slice Zone*
  *
  */
-type EventDocumentDataSlicesSlice = EventInfoSlice | TextBlockSlice | EmbedSlice;
+type EventDocumentDataSlicesSlice = EventInfoSlice | TextBlockSlice | EmbedSlice | ImageSlice;
 /**
  * Event document from Prismic
  *
