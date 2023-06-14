@@ -13,6 +13,7 @@ export default function Document() {
           rel="stylesheet"
         />
        <link rel="stylesheet" href="https://use.typekit.net/txa4ybu.css"/>
+       <script async src="https://eocampaign1.com/form/e621049e-0aba-11ee-a2d7-fb653a89d3ac.js" data-form="e621049e-0aba-11ee-a2d7-fb653a89d3ac"></script>
       </Head>
       <body className="overflow-x-hidden antialiased">
         <Main />

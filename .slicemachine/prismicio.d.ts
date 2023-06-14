@@ -354,7 +354,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = TextBlockSlice | ImageSlice | ImageTextSlice | PartnersSlice;
+type PageDocumentDataSlicesSlice = TextBlockSlice | ImageSlice | ImageTextSlice | PartnersSlice | NewsletterSlice;
 /**
  * Page document from Prismic
  *
@@ -717,6 +717,65 @@ type LogoAnimationSliceVariation = LogoAnimationSliceDefault;
  */
 export type LogoAnimationSlice = prismicT.SharedSlice<"logo_animation", LogoAnimationSliceVariation>;
 /**
+ * Primary content in Newsletter → Primary
+ *
+ */
+interface NewsletterSliceDefaultPrimary {
+    /**
+     * Title field in *Newsletter → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: newsletter.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Text field in *Newsletter → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: newsletter.primary.text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    text: prismicT.RichTextField;
+    /**
+     * Button Text field in *Newsletter → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: newsletter.primary.button_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    button_text: prismicT.KeyTextField;
+}
+/**
+ * Default variation for Newsletter Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Newsletter`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type NewsletterSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<NewsletterSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Newsletter*
+ *
+ */
+type NewsletterSliceVariation = NewsletterSliceDefault;
+/**
+ * Newsletter Shared Slice
+ *
+ * - **API ID**: `newsletter`
+ * - **Description**: `Newsletter`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type NewsletterSlice = prismicT.SharedSlice<"newsletter", NewsletterSliceVariation>;
+/**
  * Primary content in Partners → Primary
  *
  */
@@ -914,6 +973,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArchiveDocumentData, ArchiveDocument, CategoryDocumentData, CategoryDocumentDataSlicesSlice, CategoryDocument, EventDocumentData, EventDocumentDataSlicesSlice, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, NewsItemDocumentData, NewsItemDocumentDataSlicesSlice, NewsItemDocument, NewsDocumentData, NewsDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocumentDataSlicesSlice, SettingsDocument, AllDocumentTypes, EmbedSliceDefaultPrimary, EmbedSliceDefault, EmbedSliceVariation, EmbedSlice, EventInfoSliceDefaultItem, EventInfoSliceDefault, EventInfoSliceVariation, EventInfoSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, ImageTextSliceDefaultPrimary, ImageTextSliceDefaultItem, ImageTextSliceDefault, ImageTextSliceVariation, ImageTextSlice, LogoAnimationSliceDefaultPrimary, LogoAnimationSliceDefaultItem, LogoAnimationSliceDefault, LogoAnimationSliceVariation, LogoAnimationSlice, PartnersSliceDefaultPrimary, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, SocialMediaSliceDefaultItem, SocialMediaSliceDefault, SocialMediaSliceVariation, SocialMediaSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
+        export type { ArchiveDocumentData, ArchiveDocument, CategoryDocumentData, CategoryDocumentDataSlicesSlice, CategoryDocument, EventDocumentData, EventDocumentDataSlicesSlice, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, NewsItemDocumentData, NewsItemDocumentDataSlicesSlice, NewsItemDocument, NewsDocumentData, NewsDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocumentDataSlicesSlice, SettingsDocument, AllDocumentTypes, EmbedSliceDefaultPrimary, EmbedSliceDefault, EmbedSliceVariation, EmbedSlice, EventInfoSliceDefaultItem, EventInfoSliceDefault, EventInfoSliceVariation, EventInfoSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, ImageTextSliceDefaultPrimary, ImageTextSliceDefaultItem, ImageTextSliceDefault, ImageTextSliceVariation, ImageTextSlice, LogoAnimationSliceDefaultPrimary, LogoAnimationSliceDefaultItem, LogoAnimationSliceDefault, LogoAnimationSliceVariation, LogoAnimationSlice, NewsletterSliceDefaultPrimary, NewsletterSliceDefault, NewsletterSliceVariation, NewsletterSlice, PartnersSliceDefaultPrimary, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, SocialMediaSliceDefaultItem, SocialMediaSliceDefault, SocialMediaSliceVariation, SocialMediaSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
     }
 }

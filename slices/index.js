@@ -5,6 +5,7 @@ import EventInfo from './EventInfo';
 import Image from './Image';
 import ImageText from './ImageText';
 import LogoAnimation from './LogoAnimation';
+import Newsletter from './Newsletter';
 import Partners from './Partners';
 import SocialMedia from './SocialMedia';
 import TextBlock from './TextBlock';
@@ -15,6 +16,7 @@ export {
 	Image,
 	ImageText,
 	LogoAnimation,
+	Newsletter,
 	Partners,
 	SocialMedia,
 	TextBlock,
@@ -26,6 +28,7 @@ export const components = {
 	image: Image,
 	image_text: ImageText,
 	logo_animation: LogoAnimation,
+	newsletter: Newsletter,
 	partners: Partners,
 	social_media: SocialMedia,
 	text_block: TextBlock,

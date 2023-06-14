@@ -112,6 +112,11 @@
       "default": {
         "primary": {}
       }
+    },
+    "Newsletter": {
+      "default": {
+        "primary": {}
+      }
     }
   }
 }

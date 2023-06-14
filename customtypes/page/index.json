@@ -37,6 +37,9 @@
             },
             "partners": {
               "type": "SharedSlice"
+            },
+            "newsletter": {
+              "type": "SharedSlice"
             }
           }
         }
