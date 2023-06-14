@@ -42,7 +42,15 @@ const Event = ({ page, navigation, settings }) => {
                 </div>
                 <div className="info-wrapper">
                   <div className="date-time">
-                    {page.data.date &&<span>{Moment(page.data.date).format("DD.MM.Y")}</span>}
+                    {page.data.end_date ?
+                      <span>
+                        {Moment(page.data.date).format("DD.MM")} - {Moment(page.data.end_date).format("DD.MM.Y")}
+                      </span>
+                      :
+                      <span>
+                        {Moment(page.data.date).format("DD.MM.Y")}
+                      </span>
+                    }
                     {page.data.time &&<span>{page.data.time} uur</span>}
                     {page.data.category.data?.title && <span><a href={`/${settings.lang}/category/${page.data.category.uid}`}>{page.data.category.data.title}</a></span>}
                   </div>

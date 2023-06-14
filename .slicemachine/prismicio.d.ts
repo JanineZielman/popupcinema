@@ -106,6 +106,17 @@ interface EventDocumentData {
      */
     date: prismicT.DateField;
     /**
+     * End Date field in *Event*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: Only fill in if multiple days
+     * - **API ID Path**: event.end_date
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    end_date: prismicT.DateField;
+    /**
      * Time field in *Event*
      *
      * - **Field Type**: Text

@@ -20,7 +20,15 @@ export const Event = ({ item, even, i, location, lang }) => {
             </div>
             <div className="info-wrapper">
               <div className="date-time">
-                {item.data.date &&<span>{Moment(item.data.date).format("DD.MM.Y")}</span>}
+                {item.data.end_date ?
+                  <span>
+                    {Moment(item.data.date).format("DD.MM")} - {Moment(item.data.end_date).format("DD.MM.Y")}
+                  </span>
+                  :
+                  <span>
+                    {Moment(item.data.date).format("DD.MM.Y")}
+                  </span>
+                }
                 {item.data.time &&<span>{item.data.time} uur</span>}
                 {item.data.category.data?.title && 
                   <span><Link href={`/${lang}/category/${item.data.category.uid}`}>{item.data.category.data.title}</Link></span>
