@@ -6,6 +6,8 @@ import { Layout } from "../components/Layout";
 import { Event } from "../components/Event";
 import { ArchiveItems } from "../components/ArchiveItems";
 import Link from "next/link";
+import { PrismicLink } from "@prismicio/react";
+import { linkResolver } from "../prismicio";
 
 const Index = ({ events, navigation, settings }) => {
 
@@ -22,13 +24,13 @@ const Index = ({ events, navigation, settings }) => {
         {events.filter(event => new Date(event.data.date).getTime() >= new Date().getTime()).map((item, i) => {
           const even = (i % 2 == 0);
           return(
-            <Event item={item} even={even} i={i} key={`event${i}`} location={true}/>
+            <Event item={item} even={even} i={i} key={`event${i}`} location={true} lang={settings.lang}/>
           )
         })}
       </div>
       <div className="archive">
-        <ArchiveItems events={events.filter(event => new Date(event.data.date).getTime() < new Date().getTime()).reverse().slice(0,5)}/>
-        <Link className="button" href="/archive">Show all</Link>
+        <ArchiveItems events={events.filter(event => new Date(event.data.date).getTime() < new Date().getTime()).reverse().slice(0,5)} lang={settings.lang} />
+        <Link className="button" href={`${settings.lang}/archive`}>Show all</Link>
         <br/><br/><br/><br/>
       </div>
     </Layout>

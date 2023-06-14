@@ -162,7 +162,7 @@ h2{
   top: 20px;
   right: 2vw;
   z-index: 999;
-  &:hover{
+  &:hover a{
     border-bottom: 1px solid black;
   }
 }

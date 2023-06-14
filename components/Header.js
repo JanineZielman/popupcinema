@@ -24,7 +24,7 @@ export const Header = ({ alternateLanguages = [], navigation, settings }) => {
             )
           })}
         </div>
-        <Link className="logo" href="/">
+        <Link className="logo" href={`/${settings.lang}`}>
           {prismicH.isFilled.image(settings.data.logo) && (
             <PrismicNextImage field={settings.data.logo} alt="logo"/>
           )}

@@ -30,12 +30,12 @@ const Category = ({ page, navigation, settings, events }) => {
           {events.filter(event => new Date(event.data.date).getTime() >= new Date().getTime()).map((item, i) => {
             const even = (i % 2 == 0);
             return(
-              <Event item={item} even={even} i={i} key={`eventwrap${i}`} location={true} />
+              <Event item={item} even={even} i={i} key={`eventwrap${i}`} location={true} lang={settings.lang} />
             )
           })}
         </div>
         <div className="archive">
-          <ArchiveItems events={events.reverse()}/>
+          <ArchiveItems events={events.reverse()} lang={settings.lang} />
         </div>
       </div>
     </Layout>

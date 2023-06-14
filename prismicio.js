@@ -19,30 +19,31 @@ export const repositoryName = prismic.getRepositoryName(sm.apiEndpoint);
  * @type {prismicH.LinkResolverFunction}
  */
 export const linkResolver = (doc) => {
+  console.log(doc)
   if (doc.type === "page") {
     if (doc.uid === "home") {
-      return "/";
+      return `/${doc.lang}`;
     } else {
-      return `/${doc.uid}`;
+      return `/${doc.lang}/${doc.uid}`;
     }
   }
   if (doc.type === "archive") {
-    return "/archive";
+    return `/${doc.lang}/archive`;
   }
   if (doc.type === "news") {
-    return "/news";
+    return `/${doc.lang}/news`;
   }
   if (doc.type === "event") {
-    return `events/${doc.uid}`;
+    return `/${doc.lang}/events/${doc.uid}`;
   }
   if (doc.type === "location") {
-    return `location/${doc.uid}`;
+    return `${doc.lang}/location/${doc.uid}`;
   }
   if (doc.type === "category") {
-    return `category/${doc.uid}`;
+    return `${doc.lang}/category/${doc.uid}`;
   }
 
-  return "/";
+  return `/${doc.lang}`;
 };
 
 /**

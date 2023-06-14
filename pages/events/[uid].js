@@ -26,7 +26,7 @@ const Event = ({ page, navigation, settings }) => {
       </Head>
       <div className="container event-page">
         <div className={`event-wrapper even-${even}`}>
-          <PrismicLink className="location page-title" href={`/location/${page.data.location.uid}`}>
+          <PrismicLink className="location page-title" href={`/${settings.lang}/location/${page.data.location.uid}`}>
             {page.data.location.data?.title && page.data.location.data.title}
           </PrismicLink>
           <div className={`gradient ${Moment(page.data.date).format("MMM").toLowerCase()}1 ${Moment(page.data.date).format("MMM").toLowerCase()}2 ${page.data.category.slug && page.data.category.slug} time${page.data.time?.slice(0, 2)}`}>
@@ -39,7 +39,7 @@ const Event = ({ page, navigation, settings }) => {
                   <div className="date-time">
                     {page.data.date &&<span>{Moment(page.data.date).format("DD.MM.Y")}</span>}
                     {page.data.time &&<span>{page.data.time} uur</span>}
-                    {page.data.category.data?.title && <span><a href={`/category/${page.data.category.uid}`}>{page.data.category.data.title}</a></span>}
+                    {page.data.category.data?.title && <span><a href={`/${settings.lang}/category/${page.data.category.uid}`}>{page.data.category.data.title}</a></span>}
                   </div>
                 </div>
               </div>

@@ -1,7 +1,8 @@
 import * as prismicH from "@prismicio/helpers";
 import Moment from "moment";
+import Link from "next/link";
 
-export const ArchiveItems = ({events}) => {
+export const ArchiveItems = ({events, lang}) => {
   return(
     <div className="list">
       {events.filter(event => new Date(event.data.date).getTime() < new Date().getTime()).map((item, i) => {
@@ -13,7 +14,7 @@ export const ArchiveItems = ({events}) => {
               </div>
             }
             <div className={`list-item`} key={`list${i}`} >
-              <a href={`/events/${item.uid}`}>
+              <Link href={`${lang}/events/${item.uid}`}>
                 <div className="content-wrapper">
                   <div className={`gradient ${Moment(item.data.date).format("MMM").toLowerCase()}1 ${Moment(item.data.date).format("MMM").toLowerCase()}2 ${item.data.category.slug && item.data.category.slug} time${item.data.time?.slice(0, 2)}`}>
                     <div className="gradient-content">
@@ -33,7 +34,7 @@ export const ArchiveItems = ({events}) => {
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           </>
         )

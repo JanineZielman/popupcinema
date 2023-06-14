@@ -1,9 +1,10 @@
 import * as prismicH from "@prismicio/helpers";
 import Moment from 'moment';
+import Link from "next/link";
 
-export const Event = ({ item, even, i, location }) => {
+export const Event = ({ item, even, i, location, lang }) => {
   return (
-    <a className={`event-wrapper even-${even}`} key={`event${i}`} href={`/events/${item.uid}?even=${even}`}>
+    <Link className={`event-wrapper even-${even}`} key={`event${i}`} href={`/${lang}/events/${item.uid}?even=${even}`}>
       {location &&
         <div className="location">
           {item.data.location.data?.title && item.data.location.data.title}
@@ -25,6 +26,6 @@ export const Event = ({ item, even, i, location }) => {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
