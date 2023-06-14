@@ -5,6 +5,7 @@ import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
 import { Event } from "../components/Event";
 import { ArchiveItems } from "../components/ArchiveItems";
+import Link from "next/link";
 
 const Index = ({ events, navigation, settings }) => {
 
@@ -27,7 +28,7 @@ const Index = ({ events, navigation, settings }) => {
       </div>
       <div className="archive">
         <ArchiveItems events={events.filter(event => new Date(event.data.date).getTime() < new Date().getTime()).reverse().slice(0,5)}/>
-        <a className="button" href="/archive">Show all</a>
+        <Link className="button" href="/archive">Show all</Link>
         <br/><br/><br/><br/>
       </div>
     </Layout>

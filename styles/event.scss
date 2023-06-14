@@ -29,12 +29,13 @@
   .content{
     width: 96%;
     margin: auto;
-    padding-bottom: 20vh;
   }
 
   .content-wrapper{
     overflow-y: scroll;
-    height: 100vh;
+    // height: 100vh;
+    height: calc(100vh - 70px);
+    padding-bottom: 100px;
   }
   .gradient{
     height: 100vh;
