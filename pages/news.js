@@ -28,7 +28,7 @@ const Archive = ({ page, news, navigation, settings }) => {
                   <div className="content-wrapper"> 
                     <div className={`gradient ${Moment(item.data.date).format("MMM").toLowerCase()}1 ${Moment(item.data.date).format("MMM").toLowerCase()}2`}>
                       <div className="gradient-content">
-                        <img src={item.data.image.url}/>
+                        <img src={item.data.image.previewImage?.url}/>
                         <div className="date-time" suppressHydrationWarning>
                           {item.data.date &&<span>{Moment(item.data.date).format("DD.MM.Y")}</span>}
                         </div>

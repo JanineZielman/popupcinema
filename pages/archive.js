@@ -9,8 +9,6 @@ import { ArchiveItems } from "../components/ArchiveItems";
 
 const Archive = ({ page, events, navigation, settings, locations, categories }) => {
 
-  console.log(locations)
-
   return (
     <Layout
       alternateLanguages={settings.alternate_languages}

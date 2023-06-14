@@ -273,7 +273,7 @@ interface NewsItemDocumentData {
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    image: prismicT.ImageField<never>;
+    image: prismicT.ImageField<"previewImage">;
     /**
      * Slice Zone field in *News Item*
      *

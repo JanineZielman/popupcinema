@@ -36,7 +36,13 @@
             "width": 0,
             "height": 1080
           },
-          "thumbnails": []
+          "thumbnails": [
+            {
+              "name": "previewImage",
+              "width": 1080,
+              "height": 1080
+            }
+          ]
         }
       },
       "slices": {
