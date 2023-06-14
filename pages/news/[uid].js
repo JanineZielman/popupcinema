@@ -24,6 +24,11 @@ const Event = ({ page, navigation, settings }) => {
           {prismicH.asText(page.data.title)} |{" "}
           {prismicH.asText(settings.data.siteTitle)}
         </title>
+        <meta name="description" content={settings.data.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${prismicH.asText(page.data.title)} | ${prismicH.asText(settings.data.siteTitle)}`} />
+        <meta property="og:description" content={settings.data.description} />
+        <meta property="og:image" content={page.data.image.url} />
       </Head>
       <div className="container event-page news-page">
         <div className={`event-wrapper even-${even}`}>

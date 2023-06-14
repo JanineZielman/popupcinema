@@ -6,10 +6,8 @@ import { Layout } from "../components/Layout";
 import { Event } from "../components/Event";
 import { ArchiveItems } from "../components/ArchiveItems";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 
 const Index = ({ events, navigation, settings }) => {
-
 
   return (
     <Layout
@@ -19,6 +17,11 @@ const Index = ({ events, navigation, settings }) => {
     >
       <Head>
         <title>{prismicH.asText(settings.data.siteTitle)}</title>
+        <meta name="description" content={settings.data.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={prismicH.asText(settings.data.siteTitle)} />
+        <meta property="og:description" content={settings.data.description} />
+        <meta property="og:image" content={settings.data.image.url} />
       </Head>
       <div className="container events">
         {events.filter(event => new Date(event.data.date).getTime() >= new Date().getTime()).map((item, i) => {

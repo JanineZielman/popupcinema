@@ -16,7 +16,12 @@ const Archive = ({ page, events, navigation, settings, locations, categories }) 
       settings={settings}
     >
       <Head>
-        <title>{prismicH.asText(settings.data.siteTitle)}</title>
+        <title>{prismicH.asText(page.data.title)} |  {prismicH.asText(settings.data.siteTitle)}</title>
+        <meta name="description" content={settings.data.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${prismicH.asText(page.data.title)} | ${prismicH.asText(settings.data.siteTitle)}`} />
+        <meta property="og:description" content={settings.data.description} />
+        <meta property="og:image" content={settings.data.image.url} />
       </Head>
       <div className="container archive">
         <h2 className="page-title">{prismicH.asText(page.data.title)}</h2>

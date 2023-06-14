@@ -7,8 +7,8 @@ import { Event } from "../components/Event";
 import { PrismicRichText } from "@prismicio/react";
 import Moment from "moment";
 
-const Archive = ({ page, news, navigation, settings }) => {
-
+const News = ({ page, news, navigation, settings }) => {
+  
   return (
     <Layout
       alternateLanguages={settings.alternate_languages}
@@ -16,7 +16,12 @@ const Archive = ({ page, news, navigation, settings }) => {
       settings={settings}
     >
       <Head>
-        <title>{prismicH.asText(settings.data.siteTitle)}</title>
+        <title>{prismicH.asText(page.data.title)} | {prismicH.asText(settings.data.siteTitle)}</title>
+        <meta name="description" content={settings.data.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${prismicH.asText(page.data.title)} | ${prismicH.asText(settings.data.siteTitle)}`} />
+        <meta property="og:description" content={settings.data.description} />
+        <meta property="og:image" content={settings.data.image.url} />
       </Head>
       <h2 className="page-title">{prismicH.asText(page.data.title)}</h2>
       <div className="container news">
@@ -49,7 +54,7 @@ const Archive = ({ page, news, navigation, settings }) => {
   );
 };
 
-export default Archive;
+export default News;
 
 export async function getStaticProps({ locale, previewData }) {
   const client = createClient({ previewData });

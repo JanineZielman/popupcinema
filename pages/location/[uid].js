@@ -18,9 +18,13 @@ const Location = ({ page, navigation, settings, events }) => {
     >
       <Head>
         <title>
-          {page.data.title} |{" "}
-          {prismicH.asText(settings.data.siteTitle)}
+          {page.data.title} | {prismicH.asText(settings.data.siteTitle)}
         </title>
+        <meta name="description" content={settings.data.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={`${page.data.title} | ${prismicH.asText(settings.data.siteTitle)}`} />
+        <meta property="og:description" content={settings.data.description} />
+        <meta property="og:image" content={settings.data.image.url} />
       </Head>
       <div className="container category-page">
         <h2 className="category page-title">{page.data.title}</h2>
