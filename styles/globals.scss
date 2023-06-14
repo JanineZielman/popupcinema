@@ -386,16 +386,18 @@ h2{
 // page
 
 .page{
-  padding-bottom: 80px;
   padding: 0 2vw;
   padding-top: 75px;
+  padding-bottom: 80px;
   &.gradient{
     background-image: none;
     &:before{
       opacity: 0.5;
+      position: fixed;
     }
     &:after{
       opacity: 0.5;
+      position: fixed;
     }
   }
   h1{
