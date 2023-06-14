@@ -6,10 +6,10 @@ import { Layout } from "../components/Layout";
 import { Event } from "../components/Event";
 import { ArchiveItems } from "../components/ArchiveItems";
 import Link from "next/link";
-import { PrismicLink } from "@prismicio/react";
-import { linkResolver } from "../prismicio";
+import dynamic from "next/dynamic";
 
 const Index = ({ events, navigation, settings }) => {
+
 
   return (
     <Layout
