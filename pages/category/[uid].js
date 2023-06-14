@@ -27,22 +27,15 @@ const Category = ({ page, navigation, settings, events }) => {
           <SliceZone slices={page.data.slices} components={components} />
         </div>
         <div className="events">
-          {events.map((item, i) => {
+          {events.filter(event => new Date(event.data.date).getTime() >= new Date().getTime()).map((item, i) => {
             const even = (i % 2 == 0);
             return(
-              <>
-                {new Date(item.data.date).getTime() >= new Date().getTime() &&
-                  <Event item={item} even={even} i={i} key={`eventwrap${i}`} location={true} />
-                }
-              </>
+              <Event item={item} even={even} i={i} key={`eventwrap${i}`} location={true} />
             )
           })}
         </div>
         <div className="archive">
-          <div className="text-block">
-            <h2>Archive</h2>
-          </div>
-          <ArchiveItems events={events}/>
+          <ArchiveItems events={events.reverse()}/>
         </div>
       </div>
     </Layout>

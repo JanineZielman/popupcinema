@@ -4,6 +4,7 @@ import * as prismicH from "@prismicio/helpers";
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
 import { Event } from "../components/Event";
+import { ArchiveItems } from "../components/ArchiveItems";
 
 const Index = ({ events, navigation, settings }) => {
 
@@ -17,16 +18,17 @@ const Index = ({ events, navigation, settings }) => {
         <title>{prismicH.asText(settings.data.siteTitle)}</title>
       </Head>
       <div className="container events">
-        {events.map((item, i) => {
+        {events.filter(event => new Date(event.data.date).getTime() >= new Date().getTime()).map((item, i) => {
           const even = (i % 2 == 0);
           return(
-            <>
-              {new Date(item.data.date).getTime() >= new Date().getTime() &&
-                <Event item={item} even={even} i={i} key={`event${i}`} location={true}/>
-              } 
-            </>
+            <Event item={item} even={even} i={i} key={`event${i}`} location={true}/>
           )
         })}
+      </div>
+      <div className="archive">
+        <ArchiveItems events={events.filter(event => new Date(event.data.date).getTime() < new Date().getTime()).reverse().slice(0,5)}/>
+        <a className="button" href="/archive">Show all</a>
+        <br/><br/><br/><br/>
       </div>
     </Layout>
   );

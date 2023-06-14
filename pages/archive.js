@@ -45,7 +45,7 @@ const Archive = ({ page, events, navigation, settings, locations, categories }) 
             </div>
           </div>
         </div>
-        <ArchiveItems events={events}/>
+        <ArchiveItems events={events.reverse()}/>
       </div>
     </Layout>
   );
