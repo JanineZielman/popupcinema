@@ -350,6 +350,17 @@ interface PageDocumentData {
      */
     title: prismicT.TitleField;
     /**
+     * Text field in *Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.text
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    text: prismicT.RichTextField;
+    /**
      * Slice Zone field in *Page*
      *
      * - **Field Type**: Slice Zone

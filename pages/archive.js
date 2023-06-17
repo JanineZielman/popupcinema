@@ -25,9 +25,11 @@ const Archive = ({ page, events, navigation, settings, locations, categories }) 
       </Head>
       <div className="container archive">
         <h2 className="page-title">{prismicH.asText(page.data.title)}</h2>
-        <div className="content text-block">
-          <PrismicRichText field={page.data.text}/>
-        </div>
+        {page.data.text[0] &&
+          <div className="content text-block">
+            <PrismicRichText field={page.data.text}/>
+          </div>
+        }
         <div className="filter">
           <div class="dropdown">
             <div class="dropbtn">Locations</div>

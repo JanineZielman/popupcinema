@@ -6,8 +6,9 @@ import { Layout } from "../components/Layout";
 import { Event } from "../components/Event";
 import { ArchiveItems } from "../components/ArchiveItems";
 import Link from "next/link";
+import { PrismicRichText } from "@prismicio/react";
 
-const Index = ({ events, navigation, settings }) => {
+const Index = ({ events, navigation, settings, page }) => {
 
   return (
     <Layout
@@ -24,6 +25,11 @@ const Index = ({ events, navigation, settings }) => {
         <meta property="og:image" content={settings.data.image.url} />
       </Head>
       <div className="container events">
+        {page.data.text[0] &&
+          <div className="content text-block page-text-block">
+            <PrismicRichText field={page.data.text}/>
+          </div>
+        }
         {events.filter(event => new Date(event.data.date).getTime() >= new Date().getTime()).map((item, i) => {
           const even = (i % 2 == 0);
           return(
@@ -55,12 +61,15 @@ export async function getStaticProps({ locale, previewData }) {
   });
   const navigation = await client.getSingle("navigation", { lang: locale });
   const settings = await client.getSingle("settings", { lang: locale });
+  const page = await client.getByUID("page", "home", { lang: locale });
+
 
   return {
     props: {
       events,
       navigation,
       settings,
+      page,
     },
   };
 }
