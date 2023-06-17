@@ -36,9 +36,12 @@ $white: #ededed;
     z-index: -2;
     top: 0;
     left: 0;
-    mask-image: url(Scan-6-black.png);
+    mask-image: url(./Scan-6-black.png);
+    -webkit-mask-image: url(./Scan-6-black.png);
     mask-size: 1px;
-    mask-repeat: repeat;
+    -webkit-mask-size: 1px;
+    mask-repeat: revert;
+    -webkit-mask-repeat: revert;
     border-radius: 10px;
   }
   &.spruit-cinema{
