@@ -40,6 +40,42 @@
           "placeholder": ""
         }
       },
+      "translations": {
+        "type": "Group",
+        "config": {
+          "label": "Translations",
+          "fields": {
+            "show_all": {
+              "type": "Text",
+              "config": {
+                "label": "Show all",
+                "placeholder": ""
+              }
+            },
+            "locations": {
+              "type": "Text",
+              "config": {
+                "label": "Locations",
+                "placeholder": ""
+              }
+            },
+            "categories": {
+              "type": "Text",
+              "config": {
+                "label": "Categories",
+                "placeholder": ""
+              }
+            },
+            "archive": {
+              "type": "Text",
+              "config": {
+                "label": "Archive",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

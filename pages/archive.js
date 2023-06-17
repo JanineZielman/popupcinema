@@ -32,27 +32,27 @@ const Archive = ({ page, events, navigation, settings, locations, categories }) 
         }
         <div className="filter">
           <div class="dropdown">
-            <div class="dropbtn">Locations</div>
+            <div class="dropbtn">{settings.data.translations[0].locations}</div>
             <div class="dropdown-content">
              {locations.map((item, i) =>{
               return(
-                <a key={`location${i}`} href={`${item.lang}/location/${item.uid}`}>{item.data.title}</a>
+                <a key={`location${i}`} href={`/${item.lang}/location/${item.uid}`}>{item.data.title}</a>
               )
              })}
             </div>
           </div>
           <div class="dropdown">
-            <div class="dropbtn">Categories</div>
+            <div class="dropbtn">{settings.data.translations[0].categories}</div>
             <div class="dropdown-content">
               {categories.map((item, i) =>{
                 return(
-                  <a key={`category${i}`} href={`${item.lang}/category/${item.uid}`}>{item.data.title}</a>
+                  <a key={`category${i}`} href={`/${item.lang}/category/${item.uid}`}>{item.data.title}</a>
                 )
               })}
             </div>
           </div>
         </div>
-        <ArchiveItems events={events.reverse()} lang={settings.lang} />
+        <ArchiveItems events={events.reverse()} lang={settings.lang} archive={settings.data.translations[0].archive} />
       </div>
     </Layout>
   );

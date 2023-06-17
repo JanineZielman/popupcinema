@@ -434,6 +434,17 @@ interface SettingsDocumentData {
      */
     description: prismicT.KeyTextField;
     /**
+     * Translations field in *Settings*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.translations[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    translations: prismicT.GroupField<Simplify<SettingsDocumentDataTranslationsItem>>;
+    /**
      * Slice Zone field in *Settings*
      *
      * - **Field Type**: Slice Zone
@@ -444,6 +455,52 @@ interface SettingsDocumentData {
      *
      */
     slices: prismicT.SliceZone<SettingsDocumentDataSlicesSlice>;
+}
+/**
+ * Item in Settings → Translations
+ *
+ */
+export interface SettingsDocumentDataTranslationsItem {
+    /**
+     * Show all field in *Settings → Translations*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.translations[].show_all
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    show_all: prismicT.KeyTextField;
+    /**
+     * Locations field in *Settings → Translations*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.translations[].locations
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    locations: prismicT.KeyTextField;
+    /**
+     * Categories field in *Settings → Translations*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.translations[].categories
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    categories: prismicT.KeyTextField;
+    /**
+     * Archive field in *Settings → Translations*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.translations[].archive
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    archive: prismicT.KeyTextField;
 }
 /**
  * Slice for *Settings → Slice Zone*
@@ -995,6 +1052,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArchiveDocumentData, ArchiveDocument, CategoryDocumentData, CategoryDocumentDataSlicesSlice, CategoryDocument, EventDocumentData, EventDocumentDataSlicesSlice, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, NewsItemDocumentData, NewsItemDocumentDataSlicesSlice, NewsItemDocument, NewsDocumentData, NewsDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocumentDataSlicesSlice, SettingsDocument, AllDocumentTypes, EmbedSliceDefaultPrimary, EmbedSliceDefault, EmbedSliceVariation, EmbedSlice, EventInfoSliceDefaultItem, EventInfoSliceDefault, EventInfoSliceVariation, EventInfoSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, ImageTextSliceDefaultPrimary, ImageTextSliceDefaultItem, ImageTextSliceDefault, ImageTextSliceVariation, ImageTextSlice, LogoAnimationSliceDefaultPrimary, LogoAnimationSliceDefaultItem, LogoAnimationSliceDefault, LogoAnimationSliceVariation, LogoAnimationSlice, NewsletterSliceDefaultPrimary, NewsletterSliceDefault, NewsletterSliceVariation, NewsletterSlice, PartnersSliceDefaultPrimary, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, SocialMediaSliceDefaultItem, SocialMediaSliceDefault, SocialMediaSliceVariation, SocialMediaSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
+        export type { ArchiveDocumentData, ArchiveDocument, CategoryDocumentData, CategoryDocumentDataSlicesSlice, CategoryDocument, EventDocumentData, EventDocumentDataSlicesSlice, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, NewsItemDocumentData, NewsItemDocumentDataSlicesSlice, NewsItemDocument, NewsDocumentData, NewsDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocumentDataTranslationsItem, SettingsDocumentDataSlicesSlice, SettingsDocument, AllDocumentTypes, EmbedSliceDefaultPrimary, EmbedSliceDefault, EmbedSliceVariation, EmbedSlice, EventInfoSliceDefaultItem, EventInfoSliceDefault, EventInfoSliceVariation, EventInfoSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, ImageTextSliceDefaultPrimary, ImageTextSliceDefaultItem, ImageTextSliceDefault, ImageTextSliceVariation, ImageTextSlice, LogoAnimationSliceDefaultPrimary, LogoAnimationSliceDefaultItem, LogoAnimationSliceDefault, LogoAnimationSliceVariation, LogoAnimationSlice, NewsletterSliceDefaultPrimary, NewsletterSliceDefault, NewsletterSliceVariation, NewsletterSlice, PartnersSliceDefaultPrimary, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, SocialMediaSliceDefaultItem, SocialMediaSliceDefault, SocialMediaSliceVariation, SocialMediaSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
     }
 }

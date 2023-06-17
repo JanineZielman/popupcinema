@@ -2,7 +2,7 @@ import * as prismicH from "@prismicio/helpers";
 import Moment from "moment";
 import Link from "next/link";
 
-export const ArchiveItems = ({events, lang}) => {
+export const ArchiveItems = ({events, lang, archive}) => {
   return(
     <div className="list">
       {events.filter(event => new Date(event.data.date).getTime() < new Date().getTime()).map((item, i) => {
@@ -10,7 +10,7 @@ export const ArchiveItems = ({events, lang}) => {
           <>
             {i == 0 &&
               <div className="text-block">
-                <h2>Archive</h2>
+                <h2>{archive}</h2>
               </div>
             }
             <div className={`list-item`} key={`list${i}`}>
