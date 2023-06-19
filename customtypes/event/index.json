@@ -62,6 +62,22 @@
           ]
         }
       },
+      "ticket_link": {
+        "type": "Link",
+        "config": {
+          "label": "Ticket Link",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "select": null
+        }
+      },
+      "ticket_link_text": {
+        "type": "Text",
+        "config": {
+          "label": "Ticket Link Text",
+          "placeholder": ""
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

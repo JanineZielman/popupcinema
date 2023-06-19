@@ -150,6 +150,28 @@ interface EventDocumentData {
      */
     category: prismicT.RelationField<"category">;
     /**
+     * Ticket Link field in *Event*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: event.ticket_link
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    ticket_link: prismicT.LinkField;
+    /**
+     * Ticket Link Text field in *Event*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: event.ticket_link_text
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    ticket_link_text: prismicT.KeyTextField;
+    /**
      * Slice Zone field in *Event*
      *
      * - **Field Type**: Slice Zone

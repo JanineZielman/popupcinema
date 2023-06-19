@@ -25,7 +25,7 @@ const Archive = ({ page, events, navigation, settings, locations, categories }) 
       </Head>
       <div className="container archive">
         <h2 className="page-title">{prismicH.asText(page.data.title)}</h2>
-        {page.data.text[0] &&
+        {page.data.text[0]?.text &&
           <div className="content text-block">
             <PrismicRichText field={page.data.text}/>
           </div>
@@ -52,7 +52,7 @@ const Archive = ({ page, events, navigation, settings, locations, categories }) 
             </div>
           </div>
         </div>
-        <ArchiveItems events={events.reverse()} lang={settings.lang} archive={settings.data.translations[0].archive} />
+        <ArchiveItems events={events.reverse()} lang={settings.lang}/>
       </div>
     </Layout>
   );

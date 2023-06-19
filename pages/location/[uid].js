@@ -40,7 +40,7 @@ const Location = ({ page, navigation, settings, events }) => {
           })}
         </div>
         <div className="archive">
-          <ArchiveItems events={events.reverse()} lang={settings.lang} />
+          <ArchiveItems events={events.reverse()} lang={settings.lang} archive={settings.data.translations[0].archive} />
         </div>
       </div>
     </Layout>

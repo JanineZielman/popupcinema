@@ -1,7 +1,7 @@
 {
   "uid": {
     "__TYPE__": "UIDContent",
-    "value": "share"
+    "value": "long"
   },
   "title": {
     "__TYPE__": "StructuredTextContent",
@@ -9,7 +9,7 @@
       {
         "type": "heading1",
         "content": {
-          "text": "Point"
+          "text": "Tribe"
         }
       }
     ]
@@ -17,16 +17,16 @@
   "date": {
     "__TYPE__": "FieldContent",
     "type": "Date",
-    "value": "2014-08-18"
+    "value": "2015-07-27"
   },
   "end_date": {
     "__TYPE__": "FieldContent",
     "type": "Date",
-    "value": "2018-01-25"
+    "value": "2023-04-23"
   },
   "time": {
     "__TYPE__": "FieldContent",
-    "value": "afternoon",
+    "value": "surprise",
     "type": "Text"
   },
   "location": {
@@ -43,11 +43,23 @@
       "id": "mock_document_id"
     }
   },
+  "ticket_link": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "ExternalLink",
+      "url": "https://slicemachine.dev"
+    }
+  },
+  "ticket_link_text": {
+    "__TYPE__": "FieldContent",
+    "value": "failed",
+    "type": "Text"
+  },
   "slices": {
     "__TYPE__": "SliceContentType",
     "value": [
       {
-        "key": "event_info$23006fb6-61bd-4da0-b15c-b7cc6ca2b669",
+        "key": "event_info$43eac4de-b5be-480c-b67b-66c57c640800",
         "name": "event_info",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -61,7 +73,7 @@
                   "label",
                   {
                     "__TYPE__": "FieldContent",
-                    "value": "local",
+                    "value": "union",
                     "type": "Text"
                   }
                 ],
@@ -69,7 +81,7 @@
                   "value",
                   {
                     "__TYPE__": "FieldContent",
-                    "value": "instance",
+                    "value": "length",
                     "type": "Text"
                   }
                 ]
@@ -79,7 +91,7 @@
         }
       },
       {
-        "key": "text_block$161529c0-801c-4dd8-a217-b3c3856ca3a3",
+        "key": "text_block$95d676dd-e32f-43a0-b057-746201ea5c63",
         "name": "text_block",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -91,7 +103,7 @@
                 {
                   "type": "heading2",
                   "content": {
-                    "text": "Coach"
+                    "text": "Syllable"
                   }
                 }
               ]
@@ -102,7 +114,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Culpa ad ex ad officia commodo velit ea."
+                    "text": "Pariatur est voluptate exercitation sunt esse ad."
                   }
                 }
               ]
@@ -113,7 +125,7 @@
                 {
                   "type": "paragraph",
                   "content": {
-                    "text": "Aliqua exercitation cillum eu eu aliquip do do est dolor incididunt esse fugiat adipisicing ad incididunt."
+                    "text": "Voluptate ipsum anim do ad ex aliquip magna sit et eiusmod incididunt. Mollit nostrud deserunt culpa id magna cupidatat est cillum in proident Lorem minim est sit."
                   }
                 }
               ]
@@ -128,7 +140,7 @@
         }
       },
       {
-        "key": "embed$f5da4a96-ca53-466e-8e33-cfbab9c6f540",
+        "key": "embed$9a18b00c-057e-4072-b65b-fb17448edc60",
         "name": "embed",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -169,7 +181,7 @@
         }
       },
       {
-        "key": "image$c4d2e0dd-b2f2-4f96-a66f-e3e687b3ddc1",
+        "key": "image$52e8fe59-3a71-4993-a812-5398ed00294a",
         "name": "image",
         "widget": {
           "__TYPE__": "SharedSliceContent",
@@ -179,18 +191,18 @@
               "__TYPE__": "ImageContent",
               "origin": {
                 "id": "main",
-                "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea",
-                "width": 5000,
-                "height": 4613
+                "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
+                "width": 3168,
+                "height": 4752
               },
-              "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea?rect=0%2C1%2C5000%2C4611&w=1171&h=1080",
-              "width": 1171,
+              "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?rect=0%2C0%2C3168%2C4752&w=720&h=1080",
+              "width": 720,
               "height": 1080,
               "edit": {
                 "zoom": 1,
                 "crop": {
                   "x": 0,
-                  "y": 1
+                  "y": 0
                 },
                 "background": "transparent"
               },

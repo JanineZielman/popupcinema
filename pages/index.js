@@ -9,7 +9,6 @@ import Link from "next/link";
 import { PrismicRichText } from "@prismicio/react";
 
 const Index = ({ events, navigation, settings, page }) => {
-
   return (
     <Layout
       alternateLanguages={settings.alternate_languages}
@@ -25,7 +24,7 @@ const Index = ({ events, navigation, settings, page }) => {
         <meta property="og:image" content={settings.data.image.url} />
       </Head>
       <div className="container events">
-        {page.data.text[0] &&
+        {page.data.text[0]?.text &&
           <div className="content text-block page-text-block">
             <PrismicRichText field={page.data.text}/>
           </div>
@@ -38,7 +37,7 @@ const Index = ({ events, navigation, settings, page }) => {
         })}
       </div>
       <div className="archive">
-        <ArchiveItems events={events.filter(event => new Date(event.data.date).getTime() < new Date().getTime()).reverse().slice(0,5)} lang={settings.lang} />
+        <ArchiveItems events={events.filter(event => new Date(event.data.date).getTime() < new Date().getTime()).reverse().slice(0,5)} lang={settings.lang} archive={settings.data.translations[0].archive} />
         <Link className="button" href={`${settings.lang}/archive`}>{settings.data.translations[0].show_all}</Link>
         <br/><br/><br/><br/>
       </div>

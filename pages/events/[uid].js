@@ -57,7 +57,8 @@ const Event = ({ page, navigation, settings }) => {
                 </div>
               </div>
               <div className="content">
-                <SliceZone slices={page.data.slices} components={components} />
+                {page.data.ticket_link && <PrismicLink className="ticket button" field={page.data.ticket_link}>{page.data.ticket_link_text}</PrismicLink>}
+                <SliceZone slices={page.data.slices} components={components}/>
               </div>
             </div>
           </div>
