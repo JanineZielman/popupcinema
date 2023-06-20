@@ -55,6 +55,12 @@
             },
             "text_block": {
               "type": "SharedSlice"
+            },
+            "embed": {
+              "type": "SharedSlice"
+            },
+            "logo_animation": {
+              "type": "SharedSlice"
             }
           }
         }

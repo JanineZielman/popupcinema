@@ -323,7 +323,7 @@ interface NewsItemDocumentData {
  * Slice for *News Item → Slice Zone*
  *
  */
-type NewsItemDocumentDataSlicesSlice = ImageSlice | TextBlockSlice;
+type NewsItemDocumentDataSlicesSlice = ImageSlice | TextBlockSlice | EmbedSlice | LogoAnimationSlice;
 /**
  * News Item document from Prismic
  *
