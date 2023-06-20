@@ -3,7 +3,6 @@ import * as prismicH from "@prismicio/helpers";
 
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
-import { Event } from "../components/Event";
 import { PrismicRichText } from "@prismicio/react";
 import { ArchiveItems } from "../components/ArchiveItems"; 
 
@@ -52,7 +51,7 @@ const Archive = ({ page, events, navigation, settings, locations, categories }) 
             </div>
           </div>
         </div>
-        <ArchiveItems events={events.reverse()} lang={settings.lang}/>
+        <ArchiveItems events={events} lang={settings.lang}/>
       </div>
     </Layout>
   );
@@ -68,7 +67,7 @@ export async function getStaticProps({ locale, previewData }) {
     lang: locale,
     orderings: {
 			field: 'my.event.date',
-			direction: 'asc',
+			direction: 'desc',
 		},
     fetchLinks: 'location.title category.title'
   });
