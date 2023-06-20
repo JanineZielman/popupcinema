@@ -72,6 +72,13 @@
                 "label": "Archive",
                 "placeholder": ""
               }
+            },
+            "news": {
+              "type": "Text",
+              "config": {
+                "label": "News",
+                "placeholder": ""
+              }
             }
           }
         }

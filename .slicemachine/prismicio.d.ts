@@ -523,6 +523,16 @@ export interface SettingsDocumentDataTranslationsItem {
      *
      */
     archive: prismicT.KeyTextField;
+    /**
+     * News field in *Settings → Translations*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.translations[].news
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    news: prismicT.KeyTextField;
 }
 /**
  * Slice for *Settings → Slice Zone*

@@ -32,6 +32,9 @@ const Event = ({ page, navigation, settings }) => {
       </Head>
       <div className="container event-page news-page">
         <div className={`event-wrapper even-${even}`}>
+          <PrismicLink className="location page-title" href={`/${settings.lang}/news`}>
+            {settings.data.translations[0].news}
+          </PrismicLink>
           <div className={`gradient ${Moment(page.data.date).format("MMM").toLowerCase()}1 ${Moment(page.data.date).format("MMM").toLowerCase()}2`}>
             <div className="content-wrapper">
               <div className="gradient-content">
