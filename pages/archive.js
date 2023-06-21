@@ -6,7 +6,7 @@ import { Layout } from "../components/Layout";
 import { PrismicRichText } from "@prismicio/react";
 import { ArchiveItems } from "../components/ArchiveItems"; 
 
-const Archive = ({ page, events, navigation, settings, locations, categories }) => {
+const Archive = ({ page, events, navigation, settings, locations, categories, tags }) => {
 
   return (
     <Layout
@@ -29,29 +29,7 @@ const Archive = ({ page, events, navigation, settings, locations, categories }) 
             <PrismicRichText field={page.data.text}/>
           </div>
         }
-        <div className="filter">
-          <div class="dropdown">
-            <div class="dropbtn">{settings.data.translations[0].locations}</div>
-            <div class="dropdown-content">
-             {locations.map((item, i) =>{
-              return(
-                <a key={`location${i}`} href={`/${item.lang}/location/${item.uid}`}>{item.data.title}</a>
-              )
-             })}
-            </div>
-          </div>
-          <div class="dropdown">
-            <div class="dropbtn">{settings.data.translations[0].categories}</div>
-            <div class="dropdown-content">
-              {categories.map((item, i) =>{
-                return(
-                  <a key={`category${i}`} href={`/${item.lang}/category/${item.uid}`}>{item.data.title}</a>
-                )
-              })}
-            </div>
-          </div>
-        </div>
-        <ArchiveItems events={events} lang={settings.lang}/>
+        <ArchiveItems events={events} lang={settings.lang} settings={settings} locations={locations} categories={categories} tags={tags}/>
       </div>
     </Layout>
   );
@@ -76,6 +54,7 @@ export async function getStaticProps({ locale, previewData }) {
 
   const locations = await client.getAllByType("location", { lang: locale });
   const categories = await client.getAllByType("category", { lang: locale });
+  const tags = await client.getAllByType("tag", { lang: locale });
 
   return {
     props: {
@@ -84,7 +63,8 @@ export async function getStaticProps({ locale, previewData }) {
       navigation,
       settings,
       locations,
-      categories
+      categories,
+      tags
     },
   };
 }

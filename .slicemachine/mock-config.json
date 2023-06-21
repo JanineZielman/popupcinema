@@ -39,7 +39,8 @@
     "category": {},
     "archive": {},
     "news_item": {},
-    "news": {}
+    "news": {},
+    "tag": {}
   },
   "slices": {
     "Text": {

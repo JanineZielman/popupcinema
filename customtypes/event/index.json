@@ -62,6 +62,21 @@
           ]
         }
       },
+      "tags": {
+        "type": "Group",
+        "config": {
+          "label": "Tags",
+          "fields": {
+            "tag": {
+              "type": "Link",
+              "config": {
+                "label": "Tag",
+                "select": "document"
+              }
+            }
+          }
+        }
+      },
       "ticket_link": {
         "type": "Link",
         "config": {

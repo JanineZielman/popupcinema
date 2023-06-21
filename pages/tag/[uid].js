@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { SliceZone } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
+import * as prismic from '@prismicio/client'
+import { predicate } from "@prismicio/client"
 
 import { createClient } from "../../prismicio";
 import { components } from "../../slices";
@@ -8,7 +10,8 @@ import { Layout } from "../../components/Layout";
 import { Event } from "../../components/Event";
 import { ArchiveItems } from "../../components/ArchiveItems";
 
-const Category = ({ page, navigation, settings, events, locations, categories, tags }) => {
+const Tag = ({ page, navigation, settings, events, locations, categories, tags }) => {
+
   return (
     <Layout
       alternateLanguages={page.alternate_languages}
@@ -46,7 +49,7 @@ const Category = ({ page, navigation, settings, events, locations, categories, t
   );
 };
 
-export default Category;
+export default Tag;
 
 export async function getStaticProps({ params, locale, previewData }) {
   const client = createClient({ previewData });
@@ -57,14 +60,15 @@ export async function getStaticProps({ params, locale, previewData }) {
 			field: 'my.event.date',
 			direction: 'asc',
 		},
-    fetchLinks: 'location.title category.title'
+    fetchLinks: 'location.title category.title tags',
   });
 
-  const events = allEvents.filter(event => event.data.category.uid == params.uid);
+  const events = allEvents.filter(event => event.data.tags.find(tag => tag.tag.uid == params.uid))
+  
 
-  const page = await client.getByUID("category", params.uid, { 
+  const page = await client.getByUID("tag", params.uid, { 
     lang: locale,
-    fetchLinks: 'location.title category.title' 
+    fetchLinks: 'location.title category.title',
   });
   const navigation = await client.getSingle("navigation", { lang: locale });
   const settings = await client.getSingle("settings", { lang: locale });
@@ -90,7 +94,7 @@ export async function getStaticProps({ params, locale, previewData }) {
 export async function getStaticPaths() {
   const client = createClient();
 
-  const pages = await client.getAllByType("category", { lang: "*" });
+  const pages = await client.getAllByType("tag", { lang: "*" });
 
   return {
     paths: pages.map((page) => {

@@ -8,7 +8,7 @@ import { Layout } from "../../components/Layout";
 import { Event } from "../../components/Event";
 import { ArchiveItems } from "../../components/ArchiveItems";
 
-const Location = ({ page, navigation, settings, events }) => {
+const Location = ({ page, navigation, settings, events, locations, categories, tags }) => {
 
   return (
     <Layout
@@ -40,7 +40,7 @@ const Location = ({ page, navigation, settings, events }) => {
           })}
         </div>
         <div className="archive">
-          <ArchiveItems events={events.reverse()} lang={settings.lang} archive={settings.data.translations[0].archive} />
+          <ArchiveItems events={events.reverse()} lang={settings.lang} archive={settings.data.translations[0].archive} settings={settings} locations={locations} categories={categories} tags={tags} />
         </div>
       </div>
     </Layout>
@@ -70,12 +70,20 @@ export async function getStaticProps({ params, locale, previewData }) {
   const navigation = await client.getSingle("navigation", { lang: locale });
   const settings = await client.getSingle("settings", { lang: locale });
 
+
+  const locations = await client.getAllByType("location", { lang: locale });
+  const categories = await client.getAllByType("category", { lang: locale });
+  const tags = await client.getAllByType("tag", { lang: locale });
+
   return {
     props: {
       events,
       page,
       navigation,
-      settings
+      settings,
+      locations,
+      categories,
+      tags
     },
   };
 }

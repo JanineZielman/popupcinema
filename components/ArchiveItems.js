@@ -2,7 +2,7 @@ import * as prismicH from "@prismicio/helpers";
 import Moment from "moment";
 import Link from "next/link";
 
-export const ArchiveItems = ({events, lang, archive}) => {
+export const ArchiveItems = ({events, lang, archive, categories, locations, settings, tags}) => {
   return(
     <div className="list">
       {events.filter(event => new Date(event.data.date).getTime() < new Date().getTime()).map((item, i) => {
@@ -11,10 +11,45 @@ export const ArchiveItems = ({events, lang, archive}) => {
             {i == 0 &&
               <div className="text-block">
                 <h2>{archive}</h2>
+                {locations && categories &&
+                  <div className="filter">
+                    <div class="dropdown">
+                      <div class="dropbtn">{settings.data.translations[0].locations}</div>
+                      <div class="dropdown-content">
+                      {locations.map((item, i) =>{
+                        return(
+                          <a key={`location${i}`} href={`/${item.lang}/location/${item.uid}`}>{item.data.title}</a>
+                        )
+                      })}
+                      </div>
+                    </div>
+                    <div class="dropdown">
+                      <div class="dropbtn">{settings.data.translations[0].categories}</div>
+                      <div class="dropdown-content">
+                        {categories.map((item, i) =>{
+                          return(
+                            <a key={`category${i}`} href={`/${item.lang}/category/${item.uid}`}>{item.data.title}</a>
+                          )
+                        })}
+                      </div>
+                    </div>
+                    <div class="dropdown">
+                      <div class="dropbtn">Tags</div>
+                      <div class="dropdown-content">
+                        {tags.map((item, i) =>{
+                          return(
+                            <a key={`tag${i}`} href={`/${item.lang}/tag/${item.uid}`}>{item.data.title}</a>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                }
               </div>
             }
+            
             <div className={`list-item`} key={`list${i}`}>
-              <Link href={`${lang}/events/${item.uid}`}>
+              <Link href={`/${lang}/events/${item.uid}`}>
                 <div className="content-wrapper">
                   <div className={`gradient ${Moment(item.data.date).format("MMM").toLowerCase()}1 ${Moment(item.data.date).format("MMM").toLowerCase()}2 ${item.data.category.slug && item.data.category.slug} time${item.data.time?.slice(0, 2)}`}>
                     <div className="gradient-content">

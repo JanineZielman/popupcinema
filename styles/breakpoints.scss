@@ -188,6 +188,13 @@
     transform: scale(0.5);
   }
 
+  .filter{
+    flex-direction: column;
+    .dropdown{
+      margin-bottom: 14px;
+    }
+  }
+
   @keyframes animation {
     0%   {height: 40vh;}
     100% {height: 100%;}

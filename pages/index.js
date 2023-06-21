@@ -37,7 +37,7 @@ const Index = ({ events, navigation, settings, page }) => {
         })}
       </div>
       <div className="archive">
-        <ArchiveItems events={events.filter(event => new Date(event.data.date).getTime() < new Date().getTime()).reverse().slice(0,5)} lang={settings.lang} archive={settings.data.translations[0].archive} />
+        <ArchiveItems settings={settings} events={events.filter(event => new Date(event.data.date).getTime() < new Date().getTime()).reverse().slice(0,5)} lang={settings.lang} archive={settings.data.translations[0].archive} />
         <Link className="button" href={`${settings.lang}/archive`}>{settings.data.translations[0].show_all}</Link>
         <br/><br/><br/><br/>
       </div>
@@ -68,7 +68,7 @@ export async function getStaticProps({ locale, previewData }) {
       events,
       navigation,
       settings,
-      page,
+      page
     },
   };
 }
