@@ -838,6 +838,16 @@ interface LogoAnimationSliceDefaultPrimary {
      *
      */
     text_color: prismicT.ColorField;
+    /**
+     * Amount field in *LogoAnimation → Primary*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: logo_animation.primary.amount
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    amount: prismicT.SelectField<"3" | "6" | "10">;
 }
 /**
  * Item in LogoAnimation → Items

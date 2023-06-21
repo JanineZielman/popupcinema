@@ -11,8 +11,8 @@ const LogoAnimation = ({ slice }) => {
     <div className="logo-section">
       <div className="logo-animation" id="capture">
         <div className="logo-ani" style={{backgroundColor: slice.primary.text_color, width: '300px', height: '123px',  maskImage: `url(/logo.svg)`, '-webkitMaskImage': `url(/logo.svg)`}}></div>
-        <div className="loop">
-          {slice.items.map((item, i) => {
+        <div className={`loop amount${slice.primary.amount}`}>
+          {slice.items.slice(0, slice.primary.amount).map((item, i) => {
             return(
               <h1 key={`logo${i}`} style={{color: slice.primary.text_color}}>{item.text}</h1>
             )

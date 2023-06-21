@@ -520,13 +520,48 @@ h2{
   }
 }
 
-@keyframes logoAni {
+.logo-animation .loop.amount3 h1:first-child{
+  animation: logoAni3 4s ease 1s infinite;
+}
+
+.logo-animation .loop.amount6 h1:first-child{
+  animation: logoAni6 7s ease 1s infinite;
+}
+
+.logo-animation .loop.amount10 h1:first-child{
+  animation: logoAni10 11s ease 1s infinite;
+}
+
+
+@keyframes logoAni3 {
   0%   {margin-top: 0px;}
-  20%  {margin-top: -100px;}
-  40%  {margin-top: -200px;}
-  60%  {margin-top: -300px;}
-  80%  {margin-top: -400px;}
-  100%  {margin-top: -500px;}
+  33%  {margin-top: -100px;}
+  66%  {margin-top: -200px;}
+  100%  {margin-top: -300px;}
+}
+
+@keyframes logoAni6 {
+  0%   {margin-top: 0px;}
+  16%  {margin-top: -100px;}
+  33%  {margin-top: -200px;}
+  50%  {margin-top: -300px;}
+  67%  {margin-top: -400px;}
+  83%  {margin-top: -500px;}
+  100%  {margin-top: -600px;}
+}
+
+@keyframes logoAni10 {
+  0%   {margin-top: 0px;}
+  10%  {margin-top: -100px;}
+  20%  {margin-top: -200px;}
+  30%  {margin-top: -300px;}
+  40%  {margin-top: -400px;}
+  50%  {margin-top: -500px;}
+  60%  {margin-top: -600px;}
+  70%  {margin-top: -700px;}
+  80%  {margin-top: -800px;}
+  90%  {margin-top: -900px;}
+  100%  {margin-top: -1000px;}
 }
 
 

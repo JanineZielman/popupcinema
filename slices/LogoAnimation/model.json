@@ -24,6 +24,18 @@
             "label": "Text Color",
             "placeholder": ""
           }
+        },
+        "amount": {
+          "type": "Select",
+          "config": {
+            "label": "Amount",
+            "placeholder": "",
+            "options": [
+              "3",
+              "6",
+              "10"
+            ]
+          }
         }
       },
       "items": {
