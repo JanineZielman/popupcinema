@@ -476,6 +476,9 @@ h2{
 .logo-page{
   width: 100vw;
   height: 100vh;
+  .logo-animation{
+    transform: scale(2) translate(-25%,-25%);
+  }
 }
 
 .logo-section{
