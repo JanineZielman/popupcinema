@@ -9,7 +9,8 @@ import { Event } from "../../components/Event";
 import { ArchiveItems } from "../../components/ArchiveItems";
 
 const Location = ({ page, navigation, settings, events, locations, categories, tags }) => {
-
+  var currentTime = new Date();
+  currentTime.setDate(currentTime.getDate() - 1);
   return (
     <Layout
       alternateLanguages={page.alternate_languages}
@@ -32,7 +33,7 @@ const Location = ({ page, navigation, settings, events, locations, categories, t
           <SliceZone slices={page.data.slices} components={components} />
         </div>
         <div className="events">
-          {events.filter(event => new Date(event.data.date).getTime() >= new Date().getTime()).map((item, i) => {
+          {events.filter(event => new Date(event.data.date).getTime() >= currentTime.getTime()).map((item, i) => {
             const even = (i % 2 == 0);
             return(
               <Event item={item} even={even} i={i} key={`eventwrap${i}`} location={false} lang={settings.lang}  />

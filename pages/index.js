@@ -9,6 +9,8 @@ import Link from "next/link";
 import { PrismicRichText } from "@prismicio/react";
 
 const Index = ({ events, navigation, settings, page }) => {
+  var currentTime = new Date();
+  currentTime.setDate(currentTime.getDate() - 1);
   return (
     <Layout
       alternateLanguages={settings.alternate_languages}
@@ -29,7 +31,7 @@ const Index = ({ events, navigation, settings, page }) => {
             <PrismicRichText field={page.data.text}/>
           </div>
         }
-        {events.filter(event => new Date(event.data.date).getTime() >= new Date().getTime()).map((item, i) => {
+        {events.filter(event => new Date(event.data.date).getTime() >= currentTime.getTime()).map((item, i) => {
           const even = (i % 2 == 0);
           return(
             <Event item={item} even={even} i={i} key={`event${i}`} location={true} lang={settings.lang}/>
@@ -37,7 +39,7 @@ const Index = ({ events, navigation, settings, page }) => {
         })}
       </div>
       <div className="archive">
-        <ArchiveItems settings={settings} events={events.filter(event => new Date(event.data.date).getTime() < new Date().getTime()).reverse().slice(0,5)} lang={settings.lang} archive={settings.data.translations[0].archive} />
+        <ArchiveItems settings={settings} events={events.filter(event => new Date(event.data.date).getTime() < currentTime.getTime()).reverse().slice(0,5)} lang={settings.lang} archive={settings.data.translations[0].archive} />
         <Link className="button" href={`${settings.lang}/archive`}>{settings.data.translations[0].show_all}</Link>
         <br/><br/><br/><br/>
       </div>
