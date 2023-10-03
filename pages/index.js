@@ -37,11 +37,11 @@ const Index = ({ events, navigation, settings, page }) => {
             <Event item={item} even={even} i={i} key={`event${i}`} location={true} lang={settings.lang}/>
           )
         })}
-      </div>
-      <div className="archive">
-        <ArchiveItems settings={settings} events={events.filter(event => new Date(event.data.date).getTime() < currentTime.getTime()).reverse().slice(0,5)} lang={settings.lang} archive={settings.data.translations[0].archive} />
-        <Link className="button" href={`${settings.lang}/archive`}>{settings.data.translations[0].show_all}</Link>
-        <br/><br/><br/><br/>
+        <div className="archive">
+          <ArchiveItems settings={settings} events={events.filter(event => new Date(event.data.date).getTime() < currentTime.getTime()).reverse().slice(0,5)} lang={settings.lang} archive={settings.data.translations[0].archive} />
+          <Link className="button" href={`${settings.lang}/archive`}>{settings.data.translations[0].show_all}</Link>
+          <br/><br/><br/><br/>
+        </div>
       </div>
     </Layout>
   );

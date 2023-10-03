@@ -21,6 +21,17 @@ export default function Document() {
         <meta name="theme-color" content="#ffffff"></meta>
         <link rel="stylesheet" href="https://use.typekit.net/txa4ybu.css"/>
         <script async src="https://eocampaign1.com/form/e621049e-0aba-11ee-a2d7-fb653a89d3ac.js" data-form="e621049e-0aba-11ee-a2d7-fb653a89d3ac"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HFG9R1PQ0L"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-HFG9R1PQ0L', { 'anonymize_ip': true });
+            `,
+          }}
+        />
       </Head>
       <body className="overflow-x-hidden antialiased">
         <Main />
