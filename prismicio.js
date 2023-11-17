@@ -32,6 +32,9 @@ export const linkResolver = (doc) => {
   if (doc.type === "news") {
     return `/${doc.lang}/news`;
   }
+  if (doc.type === "news_item") {
+    return `/${doc.lang}/news/${doc.uid}`;
+  }
   if (doc.type === "event") {
     return `/${doc.lang}/events/${doc.uid}`;
   }
@@ -40,6 +43,9 @@ export const linkResolver = (doc) => {
   }
   if (doc.type === "category") {
     return `${doc.lang}/category/${doc.uid}`;
+  }
+  if (doc.type === "tag") {
+    return `${doc.lang}/tag/${doc.uid}`;
   }
 
   return `/${doc.lang}`;
