@@ -141,11 +141,11 @@ h2{
   left: 2vw;
   a{
     width: 20px;
-    height: auto;
+    height: 20px;
     margin-right: 5px;
     img{
-      width: 100%;
-      height: auto;
+      width: 20px;
+      height: 20px;
     }
   }
 }
@@ -265,6 +265,12 @@ h2{
 .location, .category{
   a:hover {
     text-decoration: underline;
+  }
+}
+
+.event-page{
+  .event-wrapper .text-block .title{
+    justify-content: flex-start;
   }
 }
 
@@ -397,7 +403,7 @@ h2{
         width: 100%;
         height: 100px;
         object-fit: contain;
-        object-position: left;
+        object-position: center;
       }
       h3{
         text-align: left;
