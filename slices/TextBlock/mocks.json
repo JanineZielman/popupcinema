@@ -35,6 +35,18 @@
             }
           }
         ]
+      },
+      "button": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "http://google.com"
+        }
+      },
+      "button_label": {
+        "__TYPE__": "FieldContent",
+        "value": "spirit",
+        "type": "Text"
       }
     },
     "items": [

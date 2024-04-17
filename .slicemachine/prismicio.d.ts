@@ -1116,6 +1116,26 @@ interface TextBlockSliceDefaultPrimary {
      *
      */
     text: prismicT.RichTextField;
+    /**
+     * Button field in *TextBlock → Primary*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_block.primary.button
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    button: prismicT.LinkField;
+    /**
+     * Button Label field in *TextBlock → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: text_block.primary.button_label
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    button_label: prismicT.KeyTextField;
 }
 /**
  * Default variation for TextBlock Slice

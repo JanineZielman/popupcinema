@@ -63,6 +63,9 @@ h1{
   &.ticket{
     margin-left: calc( (100% - 900px) / 2);
   }
+  &.text{
+    margin: 24px 0;
+  }
 }
 
 .page h1{

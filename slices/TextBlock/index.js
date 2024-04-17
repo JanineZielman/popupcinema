@@ -1,5 +1,5 @@
 import React from 'react'
-import { PrismicRichText } from '@prismicio/react'
+import { PrismicLink, PrismicRichText } from '@prismicio/react'
 
 /**
  * @typedef {import("@prismicio/client").Content.TextBlockSlice} TextBlockSlice
@@ -21,6 +21,11 @@ const TextBlock = ({ slice }) => (
     <div className='text'>
       {slice.primary.text &&
         <PrismicRichText field={slice.primary.text}/>
+      }
+      {slice.primary.button &&
+        <div className='button text'>
+          <PrismicLink field={slice.primary.button}>{slice.primary.button_label}</PrismicLink>
+        </div>
       }
     </div>
   </section>
