@@ -22,7 +22,7 @@ const TextBlock = ({ slice }) => (
       {slice.primary.text &&
         <PrismicRichText field={slice.primary.text}/>
       }
-      {slice.primary.button &&
+      {slice.primary.button.button_label &&
         <div className='button text'>
           <PrismicLink field={slice.primary.button}>{slice.primary.button_label}</PrismicLink>
         </div>
