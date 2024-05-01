@@ -33,7 +33,7 @@ const Tag = ({ page, navigation, settings, events, locations, categories, tags }
           <SliceZone slices={page.data.slices} components={components} />
         </div>
         <div className="events">
-          {events.filter(event => new Date(event.data.date).getTime() >= currentTime.getTime()).map((item, i) => {
+          {events.filter(event => new Date(event.data.date).getTime() >= currentTime.getTime() || new Date(event.data.end_date).getTime() >= currentTime.getTime()).map((item, i) => {
             const even = (i % 2 == 0);
             return(
               <Event item={item} even={even} i={i} key={`eventwrap${i}`} location={true} lang={settings.lang} />

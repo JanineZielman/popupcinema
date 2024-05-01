@@ -7,7 +7,7 @@ export const ArchiveItems = ({events, lang, archive, categories, locations, sett
   currentTime.setDate(currentTime.getDate() - 1);
   return(
     <div className="list">
-      {events.filter(event => new Date(event.data.date).getTime() < currentTime.getTime()).map((item, i) => {
+      {events.filter(event => new Date(event.data.date).getTime() < currentTime.getTime() && new Date(event.data.end_date).getTime() < currentTime.getTime()).map((item, i) => {
         return(
           <>
             {i == 0 &&
