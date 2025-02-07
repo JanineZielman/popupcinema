@@ -20,6 +20,15 @@
             },
             "thumbnails": []
           }
+        },
+        "caption": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Caption",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink,strong,em"
+          }
         }
       },
       "items": {},

@@ -9,6 +9,7 @@ import "../styles/event.scss";
 import "../styles/category.scss";
 import "../styles/archive.scss";
 import "../styles/news.scss";
+import "../styles/articles.scss";
 import "../styles/breakpoints.scss";
 
 export default function App({ Component, pageProps }) {

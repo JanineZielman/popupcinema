@@ -40,7 +40,9 @@
     "archive": {},
     "news_item": {},
     "news": {},
-    "tag": {}
+    "tag": {},
+    "articles": {},
+    "article_item": {}
   },
   "slices": {
     "Text": {

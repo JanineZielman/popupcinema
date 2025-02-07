@@ -1,0 +1,17 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "stay"
+  },
+  "title": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "heading1",
+        "content": {
+          "text": "Century"
+        }
+      }
+    ]
+  }
+}

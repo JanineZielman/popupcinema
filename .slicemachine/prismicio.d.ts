@@ -41,6 +41,103 @@ interface ArchiveDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type ArchiveDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ArchiveDocumentData>, "archive", Lang>;
+/** Content for Article Item documents */
+interface ArticleItemDocumentData {
+    /**
+     * Title field in *Article Item*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article_item.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Author field in *Article Item*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article_item.author
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    author: prismicT.KeyTextField;
+    /**
+     * Date field in *Article Item*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article_item.date
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    date: prismicT.DateField;
+    /**
+     * Image field in *Article Item*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article_item.image
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<"previewImage">;
+    /**
+     * Slice Zone field in *Article Item*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article_item.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<ArticleItemDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Article Item → Slice Zone*
+ *
+ */
+type ArticleItemDocumentDataSlicesSlice = ImageSlice | EmbedSlice | TextBlockSlice | LogoAnimationSlice | ImageTextSlice;
+/**
+ * Article Item document from Prismic
+ *
+ * - **API ID**: `article_item`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ArticleItemDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ArticleItemDocumentData>, "article_item", Lang>;
+/** Content for Articles documents */
+interface ArticlesDocumentData {
+    /**
+     * Title field in *Articles*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: articles.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+}
+/**
+ * Articles document from Prismic
+ *
+ * - **API ID**: `articles`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ArticlesDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ArticlesDocumentData>, "articles", Lang>;
 /** Content for Category documents */
 interface CategoryDocumentData {
     /**
@@ -560,6 +657,16 @@ export interface SettingsDocumentDataTranslationsItem {
      *
      */
     news: prismicT.KeyTextField;
+    /**
+     * Articles field in *Settings → Translations*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.translations[].articles
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    articles: prismicT.KeyTextField;
 }
 /**
  * Slice for *Settings → Slice Zone*
@@ -600,7 +707,7 @@ interface TagDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type TagDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<TagDocumentData>, "tag", Lang>;
-export type AllDocumentTypes = ArchiveDocument | CategoryDocument | EventDocument | LocationDocument | NavigationDocument | NewsItemDocument | NewsDocument | PageDocument | SettingsDocument | TagDocument;
+export type AllDocumentTypes = ArchiveDocument | ArticleItemDocument | ArticlesDocument | CategoryDocument | EventDocument | LocationDocument | NavigationDocument | NewsItemDocument | NewsDocument | PageDocument | SettingsDocument | TagDocument;
 /**
  * Primary content in Embed → Primary
  *
@@ -704,6 +811,16 @@ interface ImageSliceDefaultPrimary {
      *
      */
     image: prismicT.ImageField<never>;
+    /**
+     * Caption field in *Image → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: image.primary.caption
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    caption: prismicT.RichTextField;
 }
 /**
  * Default variation for Image Slice
@@ -1165,6 +1282,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ArchiveDocumentData, ArchiveDocument, CategoryDocumentData, CategoryDocumentDataSlicesSlice, CategoryDocument, EventDocumentData, EventDocumentDataTagsItem, EventDocumentDataSlicesSlice, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, NewsItemDocumentData, NewsItemDocumentDataSlicesSlice, NewsItemDocument, NewsDocumentData, NewsDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocumentDataTranslationsItem, SettingsDocumentDataSlicesSlice, SettingsDocument, TagDocumentData, TagDocument, AllDocumentTypes, EmbedSliceDefaultPrimary, EmbedSliceDefault, EmbedSliceVariation, EmbedSlice, EventInfoSliceDefaultItem, EventInfoSliceDefault, EventInfoSliceVariation, EventInfoSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, ImageTextSliceDefaultPrimary, ImageTextSliceDefaultItem, ImageTextSliceDefault, ImageTextSliceVariation, ImageTextSlice, LogoAnimationSliceDefaultPrimary, LogoAnimationSliceDefaultItem, LogoAnimationSliceDefault, LogoAnimationSliceVariation, LogoAnimationSlice, NewsletterSliceDefaultPrimary, NewsletterSliceDefault, NewsletterSliceVariation, NewsletterSlice, PartnersSliceDefaultPrimary, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, SocialMediaSliceDefaultItem, SocialMediaSliceDefault, SocialMediaSliceVariation, SocialMediaSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
+        export type { ArchiveDocumentData, ArchiveDocument, ArticleItemDocumentData, ArticleItemDocumentDataSlicesSlice, ArticleItemDocument, ArticlesDocumentData, ArticlesDocument, CategoryDocumentData, CategoryDocumentDataSlicesSlice, CategoryDocument, EventDocumentData, EventDocumentDataTagsItem, EventDocumentDataSlicesSlice, EventDocument, LocationDocumentData, LocationDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, NewsItemDocumentData, NewsItemDocumentDataSlicesSlice, NewsItemDocument, NewsDocumentData, NewsDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocumentDataTranslationsItem, SettingsDocumentDataSlicesSlice, SettingsDocument, TagDocumentData, TagDocument, AllDocumentTypes, EmbedSliceDefaultPrimary, EmbedSliceDefault, EmbedSliceVariation, EmbedSlice, EventInfoSliceDefaultItem, EventInfoSliceDefault, EventInfoSliceVariation, EventInfoSlice, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, ImageTextSliceDefaultPrimary, ImageTextSliceDefaultItem, ImageTextSliceDefault, ImageTextSliceVariation, ImageTextSlice, LogoAnimationSliceDefaultPrimary, LogoAnimationSliceDefaultItem, LogoAnimationSliceDefault, LogoAnimationSliceVariation, LogoAnimationSlice, NewsletterSliceDefaultPrimary, NewsletterSliceDefault, NewsletterSliceVariation, NewsletterSlice, PartnersSliceDefaultPrimary, PartnersSliceDefaultItem, PartnersSliceDefault, PartnersSliceVariation, PartnersSlice, SocialMediaSliceDefaultItem, SocialMediaSliceDefault, SocialMediaSliceVariation, SocialMediaSlice, TextBlockSliceDefaultPrimary, TextBlockSliceDefault, TextBlockSliceVariation, TextBlockSlice };
     }
 }
