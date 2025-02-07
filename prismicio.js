@@ -47,6 +47,12 @@ export const linkResolver = (doc) => {
   if (doc.type === "tag") {
     return `${doc.lang}/tag/${doc.uid}`;
   }
+  if (doc.type === "articles") {
+    return `${doc.lang}/articles`;
+  }
+  if (doc.type === "article_item") {
+    return `${doc.lang}/articles/${doc.uid}`;
+  }
 
   return `/${doc.lang}`;
 };
