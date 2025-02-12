@@ -39,19 +39,19 @@ export const linkResolver = (doc) => {
     return `/${doc.lang}/events/${doc.uid}`;
   }
   if (doc.type === "location") {
-    return `${doc.lang}/location/${doc.uid}`;
+    return `/${doc.lang}/location/${doc.uid}`;
   }
   if (doc.type === "category") {
-    return `${doc.lang}/category/${doc.uid}`;
+    return `/${doc.lang}/category/${doc.uid}`;
   }
   if (doc.type === "tag") {
-    return `${doc.lang}/tag/${doc.uid}`;
+    return `/${doc.lang}/tag/${doc.uid}`;
   }
   if (doc.type === "articles") {
-    return `${doc.lang}/articles`;
+    return `/${doc.lang}/articles`;
   }
   if (doc.type === "article_item") {
-    return `${doc.lang}/articles/${doc.uid}`;
+    return `/${doc.lang}/articles/${doc.uid}`;
   }
 
   return `/${doc.lang}`;
