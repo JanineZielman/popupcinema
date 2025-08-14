@@ -3,6 +3,7 @@ import Moment from 'moment';
 import Link from "next/link";
 
 export const Event = ({ item, even, i, location, lang }) => {
+  console.log(item.data.preview_image.url)
   return (
     <div className={`event-wrapper even-${even}`} key={`event${i}`}>
       {location &&
@@ -13,6 +14,7 @@ export const Event = ({ item, even, i, location, lang }) => {
         </div>
       }
       <div className="content-wrapper">
+        {item.data.preview_image?.url &&<img className="hover-img" src={item.data.preview_image.url}/>}
         <div className={`gradient ${Moment(item.data.date).format("MMM").toLowerCase()}1 ${Moment(item.data.date).format("MMM").toLowerCase()}2 ${item.data.category.slug && item.data.category.slug} time${item.data.time?.slice(0, 2)}`}>
           <Link className="gradient-content" href={`/${lang}/events/${item.uid}?even=${even}`}>
             <div className="title">

@@ -192,6 +192,17 @@ interface EventDocumentData {
      */
     title: prismicT.TitleField;
     /**
+     * Preview Image field in *Event*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: event.preview_image
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    preview_image: prismicT.ImageField<never>;
+    /**
      * Date field in *Event*
      *
      * - **Field Type**: Date

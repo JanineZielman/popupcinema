@@ -11,7 +11,6 @@ import { PrismicRichText } from "@prismicio/react";
 const Index = ({ events, navigation, settings, page }) => {
   var currentTime = new Date();
   currentTime.setDate(currentTime.getDate() - 1);
-  console.log(events)
   return (
     <Layout
       alternateLanguages={settings.alternate_languages}
@@ -53,14 +52,14 @@ export default Index;
 export async function getStaticProps({ locale, previewData }) {
   const client = createClient({ previewData });
 
-  const events = await client.getAllByType("event", { 
+  const eventsResponse = await client.getByType("event", {
     lang: locale,
-    orderings: {
-			field: 'my.event.date',
-			direction: 'asc',
-		},
-    fetchLinks: 'location.title category.title'
+    pageSize: 20,
+    page: 1,
+    orderings: { field: 'my.event.date', direction: 'desc' },
+    fetchLinks: 'location.title category.title',
   });
+  const events = eventsResponse.results.reverse();
   const navigation = await client.getSingle("navigation", { lang: locale });
   const settings = await client.getSingle("settings", { lang: locale });
   const page = await client.getByUID("page", "home", { lang: locale });

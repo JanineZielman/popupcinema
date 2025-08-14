@@ -217,6 +217,24 @@ h2{
   position: relative;
   width: 100%;
   overflow: hidden;
+  &:hover{
+    .hover-img{
+      top: -24px;
+      opacity: 1;
+    }
+  }
+  .hover-img{
+    position: absolute;
+    height: 80%;
+    width: 45%;
+    top: 24px;
+    z-index: 9;
+    left: 24px;
+    opacity: 0;
+    transition: all 0.4s ease;
+    object-fit: contain;
+    object-position: left top;
+  }
   .content-wrapper{
     position: relative;
     margin-bottom: 48px;
