@@ -7,8 +7,11 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .hover-img{
+  .event-wrapper .hover-img{
     display: none;
+  }
+  .mobile-img{
+    display: block;
   }
   h1{
     font-size: 48px;
@@ -22,7 +25,7 @@
   .navigation{
     &:hover{
       #navItems{
-        top: -190px;
+        top: -220px;
       }
     }
     #navItems{
@@ -32,7 +35,7 @@
     }
   }
   #navItems{
-    top: -190px;
+    top: -220px;
     .lang-switcher{
       display: block;
       position: relative;
