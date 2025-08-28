@@ -17,7 +17,6 @@ export const Event = ({ item, even, i, location, lang }) => {
         {item.data.preview_image?.url &&<img className="hover-img" src={item.data.preview_image.url}/>}
         <div className={`gradient ${Moment(item.data.date).format("MMM").toLowerCase()}1 ${Moment(item.data.date).format("MMM").toLowerCase()}2 ${item.data.category.slug && item.data.category.slug} time${item.data.time?.slice(0, 2)}`}>
           <Link className="gradient-content" href={`/${lang}/events/${item.uid}?even=${even}`}>
-            {item.data.preview_image?.url &&<img className="mobile-img" src={item.data.preview_image.url}/>}
             <div className="title">
               <h1>{prismicH.asText(item.data.title)}</h1>
             </div>
@@ -37,6 +36,7 @@ export const Event = ({ item, even, i, location, lang }) => {
                   <span><Link href={`/${lang}/category/${item.data.category.uid}`}>{item.data.category.data.title}</Link></span>
                 }
               </div>
+              {item.data.preview_image?.url &&<img className="mobile-img" src={item.data.preview_image.url}/>}
             </div>
           </Link>
         </div>

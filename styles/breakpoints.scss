@@ -12,6 +12,8 @@
   }
   .mobile-img{
     display: block;
+    width: 50%;
+    margin-left: 5%;
   }
   h1{
     font-size: 48px;
@@ -66,6 +68,7 @@
   .event-wrapper{
     .date-time{
       flex-direction: column;
+      width: 50%;
     }
     .gradient-content{
       padding: 24px 4vw;
@@ -83,6 +86,7 @@
     }
     .info-wrapper{
       width: 100%;
+      flex-direction: row;
     }
   }
   .events .event-wrapper:nth-child(even) .gradient-content{

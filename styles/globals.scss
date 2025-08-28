@@ -217,6 +217,7 @@ h2{
   display: none;
 }
 
+
 .event-wrapper{
   position: relative;
   width: 100%;
@@ -227,17 +228,24 @@ h2{
       opacity: 1;
     }
   }
+  &.even-false{
+    .hover-img{
+      right: 24px;
+      left: auto;
+    }
+  }
   .hover-img{
     position: absolute;
     height: 80%;
-    width: 45%;
+    width: auto;
     top: 24px;
     z-index: 9;
     left: 24px;
     opacity: 0;
     transition: all 0.4s ease;
-    object-fit: contain;
+    object-fit: cover;
     object-position: left top;
+    aspect-ratio: 4 / 3;
   }
   .content-wrapper{
     position: relative;
