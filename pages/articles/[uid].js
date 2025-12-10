@@ -64,8 +64,8 @@ const Event = ({ page, navigation, settings }) => {
             className={`gradient ${Moment(page.data.date)
               .format("MMM")
               .toLowerCase()}1 ${Moment(page.data.date)
-              .format("MMM")
-              .toLowerCase()}2`}
+                .format("MMM")
+                .toLowerCase()}2`}
           >
             <div className="content-wrapper2">
               <div className="hero-image">
@@ -104,8 +104,8 @@ const Event = ({ page, navigation, settings }) => {
                   )
                     .format("MMM")
                     .toLowerCase()}1 ${Moment(page.data.date)
-                    .format("MMM")
-                    .toLowerCase()}2`}
+                      .format("MMM")
+                      .toLowerCase()}2`}
                 ></div>
               </div>
               <div className="gradient-content">

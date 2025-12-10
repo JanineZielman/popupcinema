@@ -7,18 +7,19 @@ $lavender: #6970DD;
 $green: #24886c;
 $white: #ededed;
 
-.event-page{
-  .gradient{
+.event-page {
+  .gradient {
     background-image: none;
   }
 }
 
-.gradient{
+.gradient {
   background-size: contain;
   background-image: url(Scan-8.png);
-  filter: contrast(120%) ;
+  filter: contrast(120%);
   border-radius: 10px;
-  &:before{
+
+  &:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -28,7 +29,8 @@ $white: #ededed;
     left: 0;
     border-radius: 10px;
   }
-  &:after{
+
+  &:after {
     content: "";
     position: absolute;
     width: 100%;
@@ -44,51 +46,63 @@ $white: #ededed;
     -webkit-mask-repeat: revert;
     border-radius: 10px;
   }
-  &.spruit-cinema{
-    &:before{
-      background: radial-gradient(circle, $green 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
+
+  &.spruit-cinema {
+    &:before {
+      background: radial-gradient(circle, $green 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
     }
-    &:after{
-      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, $yellow 35%, $yellow 50%, $yellow 65%, rgba(255,255,255,0) 100%);
+
+    &:after {
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, $yellow 35%, $yellow 50%, $yellow 65%, rgba(255, 255, 255, 0) 100%);
     }
   }
 }
 
 //yellow
-.jan1, .apr1 {
-  &:before{
-    background: radial-gradient(circle, $yellow 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
+.jan1,
+.apr1 {
+  &:before {
+    background: radial-gradient(circle, $yellow 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
   }
 }
 
 //orange
-.may1, .aug1{
-  &:before{
-    background: radial-gradient(circle, $orange 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
+.may1,
+.aug1 {
+  &:before {
+    background: radial-gradient(circle, $orange 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
   }
 }
+
 //pink
-.jul1, .oct1{
-  &:before{
-    background: radial-gradient(circle, $pink 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
+.jul1,
+.oct1 {
+  &:before {
+    background: radial-gradient(circle, $pink 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
   }
 }
+
 //purple
-.sep1, .dec1{
-  &:before{
-    background: radial-gradient(circle, $purple 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
+.sep1,
+.dec1 {
+  &:before {
+    background: radial-gradient(circle, $purple 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
   }
 }
+
 //blue
-.feb1, .nov1{
-  &:before{
-    background: radial-gradient(circle, $blue 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
+.feb1,
+.nov1 {
+  &:before {
+    background: radial-gradient(circle, $blue 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
   }
 }
+
 //lavender
-.mar1, .jun1{
-  &:before{
-    background: radial-gradient(circle, $lavender 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
+.mar1,
+.jun1 {
+  &:before {
+    background: radial-gradient(circle, $lavender 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
   }
 }
 
@@ -96,38 +110,60 @@ $white: #ededed;
 //BACKGROUND
 
 //yellow
-.feb2, .mar2{
-  &:after{
+.feb2,
+.mar2 {
+  &:after {
     background-color: $yellow;
   }
 }
+
+//exception
+.article-page {
+
+  .gradient-overlay,
+  .gradient-overlay {
+    &:after {
+      background-color: $purple;
+    }
+  }
+}
+
 //orange
-.jun2, .jul2{
-  &:after{
+.jun2,
+.jul2 {
+  &:after {
     background-color: $orange;
   }
 }
+
 //pink
-.aug2, .sep2{
-  &:after{
+.aug2,
+.sep2 {
+  &:after {
     background-color: $pink;
   }
 }
+
 //purple
-.oct2, .nov2{
-  &:after{
+.oct2,
+.nov2 {
+  &:after {
     background-color: $purple;
   }
 }
+
 //blue
-.dec2, .jan2{
-  &:after{
+.dec2,
+.jan2 {
+  &:after {
     background-color: $blue;
   }
 }
+
 //lavender
-.apr2, .may2{
-  &:after{
+.apr2,
+.may2 {
+  &:after {
     background-color: $lavender;
   }
 }
@@ -136,24 +172,24 @@ $white: #ededed;
 
 // times
 
-.time06{
-  &:before{
+.time06 {
+  &:before {
     margin-left: -100%;
     // margin-left: -50%;
     width: 200%;
   }
 }
 
-.time07{
-  &:before{
+.time07 {
+  &:before {
     margin-left: -90%;
     // margin-left: -50%;
     width: 190%;
   }
 }
 
-.time08{
-  &:before{
+.time08 {
+  &:before {
     margin-left: -80%;
     // margin-left: -50%;
     width: 180%;
@@ -161,146 +197,145 @@ $white: #ededed;
 }
 
 
-.time09{
-  &:before{
+.time09 {
+  &:before {
     margin-left: -70%;
     width: 170%;
   }
 }
 
-.time10{
-  &:before{
+.time10 {
+  &:before {
     margin-left: -60%;
     width: 160%;
   }
 }
 
-.time11{
-  &:before{
+.time11 {
+  &:before {
     margin-left: -50%;
     width: 150%;
   }
 }
 
-.time12{
-  &:before{
+.time12 {
+  &:before {
     margin-left: -40%;
     width: 140%;
   }
 }
 
-.time13{
-  &:before{
+.time13 {
+  &:before {
     margin-left: -30%;
     width: 130%;
   }
 }
 
-.time14{
-  &:before{
+.time14 {
+  &:before {
     margin-left: -20%;
     width: 120%;
   }
 }
 
-.time15{
-  &:before{
+.time15 {
+  &:before {
     margin-left: -15%;
     width: 115%;
   }
 }
 
-.time16{
-  &:before{
+.time16 {
+  &:before {
     margin-left: -10%;
     width: 110%;
   }
 }
 
-.time17{
-  &:before{
+.time17 {
+  &:before {
     margin-left: -5%;
     width: 105%;
   }
 }
 
-.time18{
-  &:before{
-  }
+.time18 {
+  &:before {}
 }
 
-.time19{
-  &:before{
+.time19 {
+  &:before {
     padding-left: 5%;
     width: 105%;
   }
 }
 
-.time20{
-  &:before{
+.time20 {
+  &:before {
     padding-left: 10%;
     width: 110%;
   }
 }
 
-.time21{
-  &:before{
+.time21 {
+  &:before {
     padding-left: 15%;
     width: 115%;
   }
 }
 
-.time22{
-  &:before{
+.time22 {
+  &:before {
     padding-left: 20%;
     width: 120%;
   }
 }
 
-.time23{
-  &:before{
+.time23 {
+  &:before {
     padding-left: 25%;
     width: 125%;
   }
 }
 
-.time00{
-  &:before{
+.time00 {
+  &:before {
     padding-left: 30%;
     width: 130%;
   }
 }
 
-.time01{
-  &:before{
+.time01 {
+  &:before {
     padding-left: 35%;
     width: 135%;
   }
 }
 
-.time02{
-  &:before{
+.time02 {
+  &:before {
     padding-left: 40%;
     width: 140%;
   }
 }
 
-.time03{
-  &:before{
+.time03 {
+  &:before {
     padding-left: 45%;
     width: 145%;
   }
 }
 
-.time04{
-  &:before{
+.time04 {
+  &:before {
     padding-left: 50%;
     width: 150%;
   }
 }
 
-.time05{
-  &:before{
+.time05 {
+  &:before {
     padding-left: 55%;
     width: 155%;
   }
